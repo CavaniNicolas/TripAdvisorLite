@@ -1,0 +1,12 @@
+C:\Users\tomyr\Desktop\Cours\net.c#\Service Web\tp3\tp2correction\DalDto\bin\Debug\netcoreapp3.1\DalDto.deps.json
+C:\Users\tomyr\Desktop\Cours\net.c#\Service Web\tp3\tp2correction\DalDto\bin\Debug\netcoreapp3.1\DalDto.dll
+C:\Users\tomyr\Desktop\Cours\net.c#\Service Web\tp3\tp2correction\DalDto\bin\Debug\netcoreapp3.1\DalDto.pdb
+C:\Users\tomyr\Desktop\Cours\net.c#\Service Web\tp3\tp2correction\DalDto\bin\Debug\netcoreapp3.1\DAL.dll
+C:\Users\tomyr\Desktop\Cours\net.c#\Service Web\tp3\tp2correction\DalDto\bin\Debug\netcoreapp3.1\DAL.pdb
+C:\Users\tomyr\Desktop\Cours\net.c#\Service Web\tp3\tp2correction\DalDto\obj\Debug\netcoreapp3.1\DalDto.csprojAssemblyReference.cache
+C:\Users\tomyr\Desktop\Cours\net.c#\Service Web\tp3\tp2correction\DalDto\obj\Debug\netcoreapp3.1\DalDto.AssemblyInfoInputs.cache
+C:\Users\tomyr\Desktop\Cours\net.c#\Service Web\tp3\tp2correction\DalDto\obj\Debug\netcoreapp3.1\DalDto.AssemblyInfo.cs
+C:\Users\tomyr\Desktop\Cours\net.c#\Service Web\tp3\tp2correction\DalDto\obj\Debug\netcoreapp3.1\DalDto.csproj.CoreCompileInputs.cache
+C:\Users\tomyr\Desktop\Cours\net.c#\Service Web\tp3\tp2correction\DalDto\obj\Debug\netcoreapp3.1\DalDto.csproj.CopyComplete
+C:\Users\tomyr\Desktop\Cours\net.c#\Service Web\tp3\tp2correction\DalDto\obj\Debug\netcoreapp3.1\DalDto.dll
+C:\Users\tomyr\Desktop\Cours\net.c#\Service Web\tp3\tp2correction\DalDto\obj\Debug\netcoreapp3.1\DalDto.pdb
