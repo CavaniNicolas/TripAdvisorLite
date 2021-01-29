@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JCj7kTUxd0T1e5j+MgpvLuMPGr3X6J7VSchmywW2Yx3DSOHkqvrgxmWUq8mtO0+Ku9vNH1rGhGJgofmWxFAOvw==",
+  "dgSpecHash": "RARks5NcBXP/q1vNgr36zCXusWnxoh2WRSSdvzpZ2soMrw1i2TFsZNEiMWraKkq6qnhxrUG1OHUIYKMnJGyc6g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\tp3+4\\tp2correction\\Business\\Business.csproj",
+  "projectFilePath": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\TripAdvisorLite\\ProjetTripAdvisor\\Business\\Business.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tomyr\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\tomyr\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",

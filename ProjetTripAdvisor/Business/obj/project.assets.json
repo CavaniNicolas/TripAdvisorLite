@@ -5743,11 +5743,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\tp3+4\\tp2correction\\Business\\Business.csproj",
+      "projectUniqueName": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\TripAdvisorLite\\ProjetTripAdvisor\\Business\\Business.csproj",
       "projectName": "Business",
-      "projectPath": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\tp3+4\\tp2correction\\Business\\Business.csproj",
+      "projectPath": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\TripAdvisorLite\\ProjetTripAdvisor\\Business\\Business.csproj",
       "packagesPath": "C:\\Users\\tomyr\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\tp3+4\\tp2correction\\Business\\obj\\",
+      "outputPath": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\TripAdvisorLite\\ProjetTripAdvisor\\Business\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\tomyr\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5764,8 +5764,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\tp3+4\\tp2correction\\DalDto\\DalDto.csproj": {
-              "projectPath": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\tp3+4\\tp2correction\\DalDto\\DalDto.csproj"
+            "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\TripAdvisorLite\\ProjetTripAdvisor\\DalDto\\DalDto.csproj": {
+              "projectPath": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\TripAdvisorLite\\ProjetTripAdvisor\\DalDto\\DalDto.csproj"
             }
           }
         }

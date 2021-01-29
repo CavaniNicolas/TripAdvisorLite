@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\tp3+4\\tp2correction\\DAL\\DAL.csproj": {}
+    "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\TripAdvisorLite\\ProjetTripAdvisor\\DAL\\DAL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\tp3+4\\tp2correction\\DAL\\DAL.csproj": {
+    "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\TripAdvisorLite\\ProjetTripAdvisor\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\tp3+4\\tp2correction\\DAL\\DAL.csproj",
+        "projectUniqueName": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\TripAdvisorLite\\ProjetTripAdvisor\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\tp3+4\\tp2correction\\DAL\\DAL.csproj",
+        "projectPath": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\TripAdvisorLite\\ProjetTripAdvisor\\DAL\\DAL.csproj",
         "packagesPath": "C:\\Users\\tomyr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\tp3+4\\tp2correction\\DAL\\obj\\",
+        "outputPath": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\TripAdvisorLite\\ProjetTripAdvisor\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tomyr\\AppData\\Roaming\\NuGet\\NuGet.Config",
