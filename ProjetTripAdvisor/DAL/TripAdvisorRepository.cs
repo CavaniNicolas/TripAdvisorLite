@@ -6,19 +6,26 @@ using System.Text;
 
 namespace DAL
 {
-    public class TripAdvisorRepository
+    public interface ITripAdvisorRepository
     {
+        IEnumerable<User> GetAllUsers();
+    }
+    public class TripAdvisorRepository : ITripAdvisorRepository
+    {
+        private readonly TripAdvisorContext context;
+
+        public TripAdvisorRepository(TripAdvisorContext context)
+        {
+            this.context = context;
+        }
         public IEnumerable<User> GetAllUsers()
         {
-            using (var context = new TripAdvisorContext())
-            {
-                User usertmp = new User();
-                List<User> listetmp = new List<User>();
-                listetmp.Add(usertmp);
-                //return listetmp;
+            User usertmp = new User();
+            List<User> listetmp = new List<User>();
+            listetmp.Add(usertmp);
+            //return listetmp;
 
-                return context.Users.ToList();
-            }
+            return context.Users.ToList();
         }
     }
 }

@@ -13,7 +13,13 @@ namespace WebApplication1.Controllers
     [Route("[controller]")]
     public class TripAdvisorController : Controller
     {
-        TripAdvisorRepository repo = new TripAdvisorRepository();
+        private readonly ITripAdvisorRepository repo;
+
+        public TripAdvisorController(ITripAdvisorRepository repo)
+        {
+            this.repo = repo;
+        }
+
         [HttpGet("/allusers")]
         public IEnumerable<User> GetAllUsers()
         {
