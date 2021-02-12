@@ -1597,19 +1597,6 @@
         "runtime": {
           "bin/placeholder/DAL.dll": {}
         }
-      },
-      "DalDto/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "DAL": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/DalDto.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/DalDto.dll": {}
-        }
       }
     }
   },
@@ -5957,18 +5944,12 @@
       "type": "project",
       "path": "../DAL/DAL.csproj",
       "msbuildProject": "../DAL/DAL.csproj"
-    },
-    "DalDto/1.0.0": {
-      "type": "project",
-      "path": "../DalDto/DalDto.csproj",
-      "msbuildProject": "../DalDto/DalDto.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "ConsoleApp3 >= 1.0.0",
       "DAL >= 1.0.0",
-      "DalDto >= 1.0.0",
       "FluentValidation >= 9.4.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.2",
       "Swashbuckle.AspNetCore >= 5.6.3"
@@ -6003,9 +5984,6 @@
           "projectReferences": {
             "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\TripAdvisorLite\\ProjetTripAdvisor\\ConsoleApp3\\ConsoleApp3.csproj": {
               "projectPath": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\TripAdvisorLite\\ProjetTripAdvisor\\ConsoleApp3\\ConsoleApp3.csproj"
-            },
-            "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\TripAdvisorLite\\ProjetTripAdvisor\\DalDto\\DalDto.csproj": {
-              "projectPath": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\TripAdvisorLite\\ProjetTripAdvisor\\DalDto\\DalDto.csproj"
             },
             "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\TripAdvisorLite\\ProjetTripAdvisor\\DAL\\DAL.csproj": {
               "projectPath": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\TripAdvisorLite\\ProjetTripAdvisor\\DAL\\DAL.csproj"

@@ -20,10 +20,36 @@ namespace WebApplication1.Controllers
             this.repo = repo;
         }
 
-        [HttpGet("/allusers")]
+        [HttpGet("/users")]
         public IEnumerable<User> GetAllUsers()
         {
             return repo.GetAllUsers();
         }
+        [HttpGet("/user")]
+        public User GetUserById(int id)
+        {
+            return repo.GetUserById(id);
+        }
+        [HttpGet("/services")]
+        public IEnumerable<Service> GetAllServices()
+        {
+            return repo.GetAllServices();
+        }
+        [HttpGet("/service")]
+        public Service GetServiceById(int id)
+        {
+            return repo.GetServiceById(id);
+        }
+        [HttpGet("/reviews")]
+        public IEnumerable<Review> GetAllReviews()
+        {
+            return repo.GetAllReviews();
+        }
+        [HttpGet("/review")]
+        public Review GetReviewById(int id)
+        {
+            return repo.GetReviewById(id);
+        }
+
     }
 }
