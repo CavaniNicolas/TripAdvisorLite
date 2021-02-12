@@ -18,5 +18,10 @@ namespace DAL.Models
             Adress = " ";
             //ReviewList = new List<Review>();
         }
+
+        public override string ToString()
+        {
+            return this.ServiceId + " " + this.Name + " " + this.Adress;
+        }
     }
 }

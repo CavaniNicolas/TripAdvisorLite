@@ -16,5 +16,10 @@ namespace DAL.Models
             Username = " ";
             //ReviewList = new List<Review>();
         }
+
+        public override string ToString()
+        {
+            return this.UserId + " " + this.Username;
+        }
     }
 }

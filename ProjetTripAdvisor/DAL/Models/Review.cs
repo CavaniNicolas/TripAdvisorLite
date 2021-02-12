@@ -8,19 +8,24 @@ namespace DAL.Models
     {
         public int ReviewId { get; set; }
         public int Note { get; set; }
-        //public User Poster { get; set; }
+        public int UserId { get; set; }
         public string Date { get; set; }
-        //public Service Service { get; set; }
+        public int ServiceId { get; set; }
         public string Text { get; set; }
 
         public Review()
         {
             ReviewId = 0;
             Note = 0;
-            //Poster = null;
+            UserId = 0;
             Date = " ";
-            //Service = null;
+            ServiceId = 0;
             Text = " ";
+        }
+
+        public override string ToString()
+        {
+            return this.ReviewId + " " + this.Note + " " + this.Text;
         }
     }
 }

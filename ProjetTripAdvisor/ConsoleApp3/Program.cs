@@ -8,10 +8,6 @@ namespace ConsoleApp3
 {
     class Program
     {
-        static string TestQuerySql()
-        {
-            return @"SELECT * FROM Userr";
-        }
         static void Main(string[] args)
         {
             //Server=tcp:tripadvisordb.database.windows.net,1433;Initial Catalog=tripadvisorDB;Persist Security Info=False;User ID=sheep;Password=ISIMAisima2021!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
@@ -20,32 +16,42 @@ namespace ConsoleApp3
             cb.UserID = "sheep";
             cb.Password = "ISIMAisima2021!";
             cb.InitialCatalog = "tripadvisorDB";
+            QueriesSQL q = new QueriesSQL();
+            Getter g = new Getter();
 
             using (var connection = new SqlConnection(cb.ConnectionString))
             {
                 connection.Open();
-                var cmd = new SqlCommand(TestQuerySql(), connection);
-
-                List<User> list = new List<User>();
-                using (SqlDataReader reader = cmd.ExecuteReader())
-                {
-                    if (reader.HasRows)
-                    {
-                        while (reader.Read())
-                        {
-                            User u = new User();
-                            u.UserId = reader.GetInt32(reader.GetOrdinal("UserId"));
-                            u.Username = reader.GetString(reader.GetOrdinal("Username"));
-                            list.Add(u);
-                        }
-                    }
-                }
-                foreach(User u in list)
-                    Console.WriteLine(u.UserId + u.Username);
+                var cmd = new SqlCommand(q.SelectAllUsers(), connection);
+                cmd.ExecuteReader();
             }
+
+            List<User> list_user = g.GetAllUsers(cb);
+            foreach (User u in list_user)
+                Console.WriteLine(u);
+
+            Console.WriteLine(g.GetUserById(cb, 20));
+
+            List<Review> list_review = g.GetAllReviews(cb);
+            foreach (Review r in list_review)
+                Console.WriteLine(r.Note + r.Text);
+
+            List<Service> list_service = g.GetAllServices(cb);
+            foreach (Service s in list_service)
+                Console.WriteLine(s.Name + s.Adress);
+
+
         }
     }
 }
+
+
+
+
+
+
+
+
 
 
 
