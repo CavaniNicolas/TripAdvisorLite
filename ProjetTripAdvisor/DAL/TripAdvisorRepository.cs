@@ -1,8 +1,7 @@
 ﻿using DAL.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using Microsoft.Data.SqlClient;
+
 
 namespace DAL
 {
@@ -25,7 +24,17 @@ namespace DAL
             listetmp.Add(usertmp);
             //return listetmp;
 
-            return context.Users.ToList();
+            //return context.Users.ToList();
+
+            var cb = new SqlConnectionStringBuilder();
+            cb.DataSource = "tripadvisordb.database.windows.net";
+            cb.UserID = "sheep";
+            cb.Password = "ISIMAisima2021!";
+            cb.InitialCatalog = "tripadvisorDB";
+            QueriesSQL q = new QueriesSQL();
+            Getter g = new Getter();
+
+
         }
     }
 }

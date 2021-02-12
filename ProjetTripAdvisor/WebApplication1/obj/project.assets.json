@@ -1566,6 +1566,25 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "ConsoleApp3/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "DAL": "1.0.0",
+          "FluentValidation": "9.4.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.1",
+          "Swashbuckle.AspNetCore": "5.5.0"
+        },
+        "compile": {
+          "bin/placeholder/ConsoleApp3.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ConsoleApp3.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "DAL/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -5929,6 +5948,11 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "ConsoleApp3/1.0.0": {
+      "type": "project",
+      "path": "../ConsoleApp3/ConsoleApp3.csproj",
+      "msbuildProject": "../ConsoleApp3/ConsoleApp3.csproj"
+    },
     "DAL/1.0.0": {
       "type": "project",
       "path": "../DAL/DAL.csproj",
@@ -5942,6 +5966,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "ConsoleApp3 >= 1.0.0",
       "DAL >= 1.0.0",
       "DalDto >= 1.0.0",
       "FluentValidation >= 9.4.0",
@@ -5976,6 +6001,9 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
+            "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\TripAdvisorLite\\ProjetTripAdvisor\\ConsoleApp3\\ConsoleApp3.csproj": {
+              "projectPath": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\TripAdvisorLite\\ProjetTripAdvisor\\ConsoleApp3\\ConsoleApp3.csproj"
+            },
             "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\TripAdvisorLite\\ProjetTripAdvisor\\DalDto\\DalDto.csproj": {
               "projectPath": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\TripAdvisorLite\\ProjetTripAdvisor\\DalDto\\DalDto.csproj"
             },
