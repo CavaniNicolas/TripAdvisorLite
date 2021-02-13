@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\tp3+4\\tp2correction\\WebApplication1\\WebApplication1.csproj": {}
+    "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\TripAdvisorLite\\ProjetTripAdvisor\\WebApplication1\\WebApplication1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\tp3+4\\tp2correction\\DalDto\\DalDto.csproj": {
+    "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\TripAdvisorLite\\ProjetTripAdvisor\\ConsoleApp3\\ConsoleApp3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\tp3+4\\tp2correction\\DalDto\\DalDto.csproj",
-        "projectName": "DalDto",
-        "projectPath": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\tp3+4\\tp2correction\\DalDto\\DalDto.csproj",
+        "projectUniqueName": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\TripAdvisorLite\\ProjetTripAdvisor\\ConsoleApp3\\ConsoleApp3.csproj",
+        "projectName": "ConsoleApp3",
+        "projectPath": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\TripAdvisorLite\\ProjetTripAdvisor\\ConsoleApp3\\ConsoleApp3.csproj",
         "packagesPath": "C:\\Users\\tomyr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\tp3+4\\tp2correction\\DalDto\\obj\\",
+        "outputPath": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\TripAdvisorLite\\ProjetTripAdvisor\\ConsoleApp3\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tomyr\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\tp3+4\\tp2correction\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\tp3+4\\tp2correction\\DAL\\DAL.csproj"
+              "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\TripAdvisorLite\\ProjetTripAdvisor\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\TripAdvisorLite\\ProjetTripAdvisor\\DAL\\DAL.csproj"
               }
             }
           }
@@ -43,6 +43,32 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[9.4.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.5.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -54,6 +80,9 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
@@ -62,14 +91,14 @@
         }
       }
     },
-    "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\tp3+4\\tp2correction\\DAL\\DAL.csproj": {
+    "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\TripAdvisorLite\\ProjetTripAdvisor\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\tp3+4\\tp2correction\\DAL\\DAL.csproj",
+        "projectUniqueName": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\TripAdvisorLite\\ProjetTripAdvisor\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\tp3+4\\tp2correction\\DAL\\DAL.csproj",
+        "projectPath": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\TripAdvisorLite\\ProjetTripAdvisor\\DAL\\DAL.csproj",
         "packagesPath": "C:\\Users\\tomyr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\tp3+4\\tp2correction\\DAL\\obj\\",
+        "outputPath": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\TripAdvisorLite\\ProjetTripAdvisor\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tomyr\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -134,14 +163,14 @@
         }
       }
     },
-    "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\tp3+4\\tp2correction\\WebApplication1\\WebApplication1.csproj": {
+    "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\TripAdvisorLite\\ProjetTripAdvisor\\WebApplication1\\WebApplication1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\tp3+4\\tp2correction\\WebApplication1\\WebApplication1.csproj",
+        "projectUniqueName": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\TripAdvisorLite\\ProjetTripAdvisor\\WebApplication1\\WebApplication1.csproj",
         "projectName": "WebApplication1",
-        "projectPath": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\tp3+4\\tp2correction\\WebApplication1\\WebApplication1.csproj",
+        "projectPath": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\TripAdvisorLite\\ProjetTripAdvisor\\WebApplication1\\WebApplication1.csproj",
         "packagesPath": "C:\\Users\\tomyr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\tp3+4\\tp2correction\\WebApplication1\\obj\\",
+        "outputPath": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\TripAdvisorLite\\ProjetTripAdvisor\\WebApplication1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tomyr\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -158,11 +187,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\tp3+4\\tp2correction\\DalDto\\DalDto.csproj": {
-                "projectPath": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\tp3+4\\tp2correction\\DalDto\\DalDto.csproj"
+              "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\TripAdvisorLite\\ProjetTripAdvisor\\ConsoleApp3\\ConsoleApp3.csproj": {
+                "projectPath": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\TripAdvisorLite\\ProjetTripAdvisor\\ConsoleApp3\\ConsoleApp3.csproj"
               },
-              "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\tp3+4\\tp2correction\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\tp3+4\\tp2correction\\DAL\\DAL.csproj"
+              "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\TripAdvisorLite\\ProjetTripAdvisor\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\tomyr\\Desktop\\Cours\\Service Web\\TripAdvisorLite\\ProjetTripAdvisor\\DAL\\DAL.csproj"
               }
             }
           }

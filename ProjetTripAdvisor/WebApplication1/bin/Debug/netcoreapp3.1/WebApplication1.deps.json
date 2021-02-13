@@ -24,8 +24,8 @@
     ".NETCoreApp,Version=v3.1": {
       "WebApplication1/1.0.0": {
         "dependencies": {
+          "ConsoleApp3": "1.0.0",
           "DAL": "1.0.0",
-          "DalDto": "1.0.0",
           "FluentValidation": "9.4.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.2",
           "Swashbuckle.AspNetCore": "5.6.3",
@@ -1435,6 +1435,20 @@
           "System.Xml.XmlDocument": "4.3.0"
         }
       },
+      "ConsoleApp3/1.0.0": {
+        "dependencies": {
+          "DAL": "1.0.0",
+          "FluentValidation": "9.4.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.2",
+          "Swashbuckle.AspNetCore": "5.6.3"
+        },
+        "runtime": {
+          "ConsoleApp3.dll": {}
+        },
+        "compile": {
+          "ConsoleApp3.dll": {}
+        }
+      },
       "DAL/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.2"
@@ -1444,17 +1458,6 @@
         },
         "compile": {
           "DAL.dll": {}
-        }
-      },
-      "DalDto/1.0.0": {
-        "dependencies": {
-          "DAL": "1.0.0"
-        },
-        "runtime": {
-          "DalDto.dll": {}
-        },
-        "compile": {
-          "DalDto.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
@@ -3792,12 +3795,12 @@
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
-    "DAL/1.0.0": {
+    "ConsoleApp3/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "DalDto/1.0.0": {
+    "DAL/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

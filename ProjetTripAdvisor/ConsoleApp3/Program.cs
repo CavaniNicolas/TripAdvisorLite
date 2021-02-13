@@ -1,7 +1,8 @@
-﻿using DAL;
+﻿using DAL.Models;
+using Microsoft.Data.SqlClient;
+using System.Data.SqlClient;
 using System;
-using FluentValidation;
-using FluentValidation.Results;
+using System.Collections.Generic;
 
 namespace ConsoleApp3
 {
@@ -9,7 +10,53 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
-            Customer customer = new Customer();
+            //Server=tcp:tripadvisordb.database.windows.net,1433;Initial Catalog=tripadvisorDB;Persist Security Info=False;User ID=sheep;Password=ISIMAisima2021!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
+            var cb = new SqlConnectionStringBuilder();
+            cb.DataSource = "tripadvisordb.database.windows.net";
+            cb.UserID = "sheep";
+            cb.Password = "ISIMAisima2021!";
+            cb.InitialCatalog = "tripadvisorDB";
+            QueriesSQL q = new QueriesSQL();
+            Getter g = new Getter();
+
+            using (var connection = new SqlConnection(cb.ConnectionString))
+            {
+                connection.Open();
+                var cmd = new SqlCommand(q.SelectAllUsers(), connection);
+                cmd.ExecuteReader();
+            }
+
+            List<User> list_user = g.GetAllUsers(cb);
+            foreach (User u in list_user)
+                Console.WriteLine(u);
+
+            Console.WriteLine(g.GetUserById(cb, 20));
+
+            List<Review> list_review = g.GetAllReviews(cb);
+            foreach (Review r in list_review)
+                Console.WriteLine(r.Note + r.Text);
+
+            List<Service> list_service = g.GetAllServices(cb);
+            foreach (Service s in list_service)
+                Console.WriteLine(s.Name + s.Adress);
+
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* //test validators
+Customer customer = new Customer();
             customer.Surname="toto";
             customer.Forename = "pcpc";
             //customer.Address = "17 rue";
@@ -26,14 +73,4 @@ namespace ConsoleApp3
             }
 
             string allMessages = results.ToString("~");
-
-        }
-    }
-}
-
-/*
-BikeStoreRepository repo = new BikeStoreRepository();
-var a =  repo.GetProductById(42);
-var b = repo.GetProductByName("Trek Fuel EX 5 27.5 Plus - 2017");
-var c = repo.GetOrderByCustomerId(450);
 */
