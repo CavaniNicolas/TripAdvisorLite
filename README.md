@@ -6,6 +6,11 @@ Pour lancer le site:
 
 2 - Lancer le frontend avec " npm run start "
 
+prealables pour le front end :
+	npm install
+	npm install react-router-dom
+
+
 Trucs à installer : 
 - NodeJs
 - Bootstrap: dans le repertoire frontend, taper " import 'bootstrap/dist/css/bootstrap.css' "
