@@ -41,6 +41,10 @@ namespace DAL
         {
             return @"DELETE FROM Review";
         }
+        public string SelectReviewById(int id)
+        {
+            return @"SELECT * FROM Review WHERE reviewId = " + id;
+        }
 
         //----------------Services------------------
         public string SelectAllServices()
@@ -56,6 +60,14 @@ namespace DAL
         public string EmptyService()
         {
             return @"DELETE FROM Service";
+        }
+        public string SelectServiceById(int id)
+        {
+            return @"SELECT * FROM Service WHERE serviceId = " + id;
+        }
+        public string SelectServiceByName(string name)
+        {
+            return @"SELECT * FROM Service WHERE name LIKE '" + name + "'";
         }
     }
 }

@@ -92,7 +92,7 @@ namespace DAL
             {
                 connection.Open();
                 Queries q = new Queries();
-                var cmd = new SqlCommand(q.SelectUserById(id), connection);
+                var cmd = new SqlCommand(q.SelectReviewById(id), connection);
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
                     if (reader.HasRows)
@@ -145,7 +145,7 @@ namespace DAL
             {
                 connection.Open();
                 Queries q = new Queries();
-                var cmd = new SqlCommand(q.SelectUserById(id), connection);
+                var cmd = new SqlCommand(q.SelectServiceById(id), connection);
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
                     if (reader.HasRows)
@@ -162,6 +162,32 @@ namespace DAL
                 }
             }
             return (new Service());
+        }
+
+        public List<Service> GetServiceByName(SqlConnectionStringBuilder cb, string name)
+        {
+            using (var connection = new SqlConnection(cb.ConnectionString))
+            {
+                connection.Open();
+                List<Service> list = new List<Service>();
+                Queries q = new Queries();
+                var cmd = new SqlCommand(q.SelectServiceByName(name), connection);
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            Service s = new Service();
+                            s.ServiceId = reader.GetInt32(reader.GetOrdinal("ServiceId"));
+                            s.Adress = reader.GetString(reader.GetOrdinal("Adress"));
+                            s.Name = reader.GetString(reader.GetOrdinal("Name"));
+                            list.Add(s);
+                        }
+                    }
+                }
+                return list;
+            }
         }
     }
 
