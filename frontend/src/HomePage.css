@@ -1,0 +1,36 @@
+
+#menu-outer {
+	height: 84px;
+}
+
+.table {
+	display: table; /* Allow the centering to work */
+	margin: 0 auto;
+}
+
+ul#horizontal-list {
+	min-width: 696px;
+	list-style: none;
+	padding-top: 20px;
+}
+
+ul#horizontal-list li {
+	display: inline; /* (normalement) This will not force breaks after the list items and they will line up horizontally as far as they are able */
+
+	background-color: lightgreen;
+	border: solid darkgreen;
+	border-radius: 10px;
+}
+
+ul#horizontal-list li a {
+	color: black;
+}
+
+ul#horizontal-list li :hover{
+	display: inline; /* (normalement) This will not force breaks after the list items and they will line up horizontally as far as they are able */
+
+	color: black;
+	background-color: bisque;
+	border: solid darkgreen;
+	border-radius: 10px;
+}

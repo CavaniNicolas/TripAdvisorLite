@@ -1,4 +1,5 @@
 
+import './ServicesPage.css';
 import Header from '../components/header/Header.js';
 import Services from '../components/service/Services.js';
 
