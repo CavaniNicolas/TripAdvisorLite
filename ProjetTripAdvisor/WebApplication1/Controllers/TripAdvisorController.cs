@@ -30,6 +30,7 @@ namespace WebApplication1.Controllers
         {
             return repo.GetUserById(id);
         }
+
         [HttpGet("/services")]
         public IEnumerable<Service> GetAllServices()
         {
@@ -40,6 +41,12 @@ namespace WebApplication1.Controllers
         {
             return repo.GetServiceById(id);
         }
+        [HttpGet("/servicebyname")]
+        public IEnumerable<Service> GetServiceByName(string name)
+        {
+            return repo.GetServiceByName(name);
+        }
+
         [HttpGet("/reviews")]
         public IEnumerable<Review> GetAllReviews()
         {
@@ -50,6 +57,7 @@ namespace WebApplication1.Controllers
         {
             return repo.GetReviewById(id);
         }
+        
 
     }
 }

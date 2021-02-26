@@ -13,6 +13,7 @@ namespace DAL
         Review GetReviewById(int id);
         IEnumerable<Service> GetAllServices();
         Service GetServiceById(int id);
+        IEnumerable<Service> GetServiceByName(string name);
     }
     public class TripAdvisorRepository : ITripAdvisorRepository
     {
@@ -81,6 +82,17 @@ namespace DAL
             Getter g = new Getter();
 
             return g.GetServiceById(cb,id);
+        }
+        public IEnumerable<Service> GetServiceByName(string name)
+        {
+            var cb = new SqlConnectionStringBuilder();
+            cb.DataSource = "tripadvisordb.database.windows.net";
+            cb.UserID = "sheep";
+            cb.Password = "ISIMAisima2021!";
+            cb.InitialCatalog = "tripadvisorDB";
+            Getter g = new Getter();
+
+            return g.GetServiceByName(cb,name);
         }
     }
 }

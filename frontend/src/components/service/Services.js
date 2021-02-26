@@ -23,7 +23,7 @@ function Services() {
 	
 	const [searchText, setSearchText] = useState(null);
   	const SearchbarFunction = txt => {
-                                fetch('https://localhost:44398/service_name?name='+txt)
+                                fetch('https://localhost:44398/servicebyname?name='+txt)
                                   .then(response => response.json())
 								  .then(json => setServiceData(json));
   	}
