@@ -189,6 +189,32 @@ namespace DAL
                 return list;
             }
         }
+
+        public List<Service> GetServiceByAny(SqlConnectionStringBuilder cb, int id = -1, string adress = null, string name = null)
+        {
+            using (var connection = new SqlConnection(cb.ConnectionString))
+            {
+                connection.Open();
+                List<Service> list = new List<Service>();
+                Queries q = new Queries();
+                var cmd = new SqlCommand(q.SelectServiceByAny(id,adress,name), connection);
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            Service s = new Service();
+                            s.ServiceId = reader.GetInt32(reader.GetOrdinal("ServiceId"));
+                            s.Adress = reader.GetString(reader.GetOrdinal("Adress"));
+                            s.Name = reader.GetString(reader.GetOrdinal("Name"));
+                            list.Add(s);
+                        }
+                    }
+                }
+                return list;
+            }
+        }
     }
 
 }

@@ -46,6 +46,11 @@ namespace WebApplication1.Controllers
         {
             return repo.GetServiceByName(name);
         }
+        [HttpGet("/servicebyany")]
+        public IEnumerable<Service> GetServiceByAny(int id = -1, string adress = null, string name = null)
+        {
+            return repo.GetServiceByAny(id, adress, name);
+        }
 
         [HttpGet("/reviews")]
         public IEnumerable<Review> GetAllReviews()

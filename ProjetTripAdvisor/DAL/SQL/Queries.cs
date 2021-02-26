@@ -69,5 +69,58 @@ namespace DAL
         {
             return @"SELECT * FROM Service WHERE name LIKE '" + name + "'";
         }
+        public string SelectServiceByAny(int id = -1, string adress = null, string name=null)
+        {
+            if (name == null)
+            {
+                if (adress == null)
+                {
+                    if (id == -1)
+                    {
+                        return @"SELECT * FROM Service";
+                    }
+                    else
+                    {
+                        return @"SELECT * FROM Service WHERE serviceId = " + id;
+                    }
+                }
+                else
+                {
+                    if (id == -1)
+                    {
+                        return @"SELECT * FROM Service WHERE adress LIKE '" + adress + "'";
+                    }
+                    else
+                    {
+                        return @"SELECT * FROM Service WHERE serviceId = " + id + " AND adress LIKE '" + adress +"'";
+                    }
+                }
+            }
+            else
+            {
+                if (adress == null)
+                {
+                    if (id == -1)
+                    {
+                        return @"SELECT * FROM Service WHERE name LIKE '" + name + "'";
+                    }
+                    else
+                    {
+                        return @"SELECT * FROM Service WHERE serviceId = " + id + "AND name LIKE '" + name + "'";
+                    }
+                }
+                else
+                {
+                    if (id == -1)
+                    {
+                        return @"SELECT * FROM Service WHERE adress LIKE '" + adress + "' AND name LIKE '" + name +"'";
+                    }
+                    else
+                    {
+                        return @"SELECT * FROM Service WHERE serviceId = " + id + " AND adress LIKE '" + adress + "' AND name LIKE '" + name + "'";
+                    }
+                }
+            }
+        }
     }
 }

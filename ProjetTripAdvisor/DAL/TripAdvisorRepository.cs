@@ -14,6 +14,7 @@ namespace DAL
         IEnumerable<Service> GetAllServices();
         Service GetServiceById(int id);
         IEnumerable<Service> GetServiceByName(string name);
+        IEnumerable<Service> GetServiceByAny(int id, string adress, string name);
     }
     public class TripAdvisorRepository : ITripAdvisorRepository
     {
@@ -93,6 +94,18 @@ namespace DAL
             Getter g = new Getter();
 
             return g.GetServiceByName(cb,name);
+        }
+
+        public IEnumerable<Service> GetServiceByAny(int id = -1, string adress = null, string name = null)
+        {
+            var cb = new SqlConnectionStringBuilder();
+            cb.DataSource = "tripadvisordb.database.windows.net";
+            cb.UserID = "sheep";
+            cb.Password = "ISIMAisima2021!";
+            cb.InitialCatalog = "tripadvisorDB";
+            Getter g = new Getter();
+
+            return g.GetServiceByAny(cb, id, adress, name);
         }
     }
 }
