@@ -45,6 +45,61 @@ namespace DAL
         {
             return @"SELECT * FROM Review WHERE reviewId = " + id;
         }
+        public string SelectReviewByAny(int id = -1, int userid = -1, int serviceid = -1, int note = -1, string texte = null, string date = null)
+        {
+            string rep = "SELECT * FROM Review";
+            bool next = false;
+            if (id != -1 || userid != -1 || serviceid != -1 || note != -1 || texte != null || date != null)
+            {
+                rep += " WHERE ";
+            }
+            if (id != -1)
+            {
+                rep += "ReviewId = " + id;
+                next = true;
+            }
+            if (userid != -1)
+            {
+                if (next)
+                    rep += " AND ";
+                else
+                    next = true;
+                rep += "UserId = " + userid;
+                
+            }
+            if (serviceid != -1)
+            {
+                if (next)
+                    rep += " AND ";
+                else
+                    next = true;
+                rep += "ServiceId = " + serviceid;
+            }
+            if (note != -1)
+            {
+                if (next)
+                    rep += " AND ";
+                else
+                    next = true;
+                rep += "Note = " + note;
+            }
+            if (texte != null)
+            {
+                if (next)
+                    rep += " AND ";
+                else
+                    next = true;
+                rep += "Text = '" + texte + "'";
+            }
+            if (date != null)
+            {
+                if (next)
+                    rep += " AND ";
+                else
+                rep += "Date = '" + date + "'";
+            }
+            return rep; 
+        }
 
         //----------------Services------------------
         public string SelectAllServices()

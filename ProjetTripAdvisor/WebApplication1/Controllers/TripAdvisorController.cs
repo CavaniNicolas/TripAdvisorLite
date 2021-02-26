@@ -62,7 +62,12 @@ namespace WebApplication1.Controllers
         {
             return repo.GetReviewById(id);
         }
-        
+        [HttpGet("/reviewbyany")]
+        public IEnumerable<Review> GetReviewByAny(int id = -1, int userid = -1, int serviceid = -1, int note = -1, string texte = null, string date = null)
+        {
+            return repo.GetReviewByAny(id,userid,serviceid,note,texte,date);
+        }
+
 
     }
 }

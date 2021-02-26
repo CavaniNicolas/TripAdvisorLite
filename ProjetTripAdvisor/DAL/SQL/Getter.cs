@@ -113,6 +113,34 @@ namespace DAL
             }
             return (new Review());
         }
+        public List<Review> GetReviewByAny(SqlConnectionStringBuilder cb, int id = -1, int userid = -1, int serviceid = -1, int note = -1, string texte = null, string date = null)
+        {
+            using (var connection = new SqlConnection(cb.ConnectionString))
+            {
+                connection.Open();
+                List<Review> list = new List<Review>();
+                Queries q = new Queries();
+                var cmd = new SqlCommand(q.SelectReviewByAny(id, userid, serviceid, note, texte, date), connection);
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            Review r = new Review();
+                            r.ReviewId = reader.GetInt32(reader.GetOrdinal("ReviewId"));
+                            r.UserId = reader.GetInt32(reader.GetOrdinal("UserId"));
+                            r.ServiceId = reader.GetInt32(reader.GetOrdinal("ServiceId"));
+                            r.Note = reader.GetInt32(reader.GetOrdinal("Note"));
+                            r.Text = reader.GetString(reader.GetOrdinal("Text"));
+                            r.Date = reader.GetString(reader.GetOrdinal("Date"));
+                            list.Add(r);
+                        }
+                    }
+                }
+                return list;
+            }
+        }
         //----------------------------------Services--------------------------------
         public List<Service> GetAllServices(SqlConnectionStringBuilder cb)
         {

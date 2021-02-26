@@ -7,7 +7,7 @@ function Services() {
 
 	const [serviceData, setServiceData] = useState([]);
 	useEffect(() => 
-	  fetch('https://localhost:44398/services')
+	  fetch('https://localhost:44398/servicebyany')
 		.then(response => response.json())
 		.then(json => setServiceData(json))
 	  ,[]);
@@ -23,7 +23,7 @@ function Services() {
 	
 	const [searchText, setSearchText] = useState(null);
   	const SearchbarFunction = txt => {
-                                fetch('https://localhost:44398/servicebyname?name='+txt)
+                                fetch('https://localhost:44398/servicebyany?name='+txt)
                                   .then(response => response.json())
 								  .then(json => setServiceData(json));
   	}
@@ -33,7 +33,7 @@ function Services() {
 		  	<h1>services</h1>
 
 		  	<div className="country-search">
-				<label for="exampleDataList" className="form-label">Search by country</label>
+				<label for="exampleDataList" className="form-label">Search by name</label>
 				<input className="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search..."
 				onChange={e => {
 					if (previousText !== e.target.value) {
@@ -49,8 +49,9 @@ function Services() {
         	</div>
 
 			<div className="col-1">serviceid</div>
-			<div className="col-1">name</div>
-			<div className="col-4">adress</div>
+			<div className="col-2">name</div>
+			<div className="col-3">adress</div>
+			<div className="col-2">Click to view reviews</div>
 			<h1> </h1>
 			{ServiceList}
         </div>
