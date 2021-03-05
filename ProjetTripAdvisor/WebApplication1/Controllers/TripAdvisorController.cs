@@ -30,6 +30,11 @@ namespace WebApplication1.Controllers
         {
             return repo.GetUserById(id);
         }
+        [HttpGet("/userbyany")]
+        public IEnumerable<User> GetUserByAny(int id = -1, string name = null)
+        {
+            return repo.GetUserByAny(id, name);
+        }
 
         [HttpGet("/services")]
         public IEnumerable<Service> GetAllServices()

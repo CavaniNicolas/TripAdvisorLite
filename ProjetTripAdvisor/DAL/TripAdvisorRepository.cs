@@ -9,6 +9,7 @@ namespace DAL
     {
         IEnumerable<User> GetAllUsers();
         User GetUserById(int id);
+        IEnumerable<User> GetUserByAny(int id, string name);
         IEnumerable<Review> GetAllReviews();
         Review GetReviewById(int id);
         IEnumerable<Review> GetReviewByAny(int id, int userid, int serviceid, int note, string texte, string date);
@@ -41,6 +42,17 @@ namespace DAL
 
             return g.GetUserById(cb,id);
         }
+        public IEnumerable<User> GetUserByAny(int id = -1, string name = null)
+        {
+            var cb = new SqlConnectionStringBuilder();
+            cb.DataSource = "tripadvisordb.database.windows.net";
+            cb.UserID = "sheep";
+            cb.Password = "ISIMAisima2021!";
+            cb.InitialCatalog = "tripadvisorDB";
+            Getter g = new Getter();
+
+            return g.GetUserByAny(cb, id, name);
+        }
         public IEnumerable<Review> GetAllReviews()
         {
             var cb = new SqlConnectionStringBuilder();
@@ -63,7 +75,7 @@ namespace DAL
 
             return g.GetReviewById(cb,id);
         }
-        public IEnumerable<Review> GetReviewbyAny(int id = -1, int userid = -1, int serviceid = -1, int note = -1, string texte = null, string date = null)
+        public IEnumerable<Review> GetReviewByAny(int id = -1, int userid = -1, int serviceid = -1, int note = -1, string texte = null, string date = null)
         {
             var cb = new SqlConnectionStringBuilder();
             cb.DataSource = "tripadvisordb.database.windows.net";

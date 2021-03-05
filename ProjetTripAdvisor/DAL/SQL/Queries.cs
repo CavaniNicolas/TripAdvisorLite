@@ -25,6 +25,31 @@ namespace DAL
         {
             return @"SELECT * FROM Userr WHERE UserId = " + id;
         }
+        public string SelectUserByAny(int id = -1, string name = null)
+        {
+            if (id == -1)
+            {
+                if (name == null)
+                {
+                    return @"SELECT * FROM Userr";
+                }
+                else
+                {
+                    return @"SELECT * FROM Userr WHERE username = '" + name + "'";
+                }
+            }
+            else
+            {
+                if (name == null)
+                {
+                    return @"SELECT * FROM Userr WHERE UserId = " + id;
+                }
+                else
+                {
+                    return @"SELECT * FROM Userr WHERE UserId = " + id + "AND username = '" + name + "'";
+                }
+            }
+        }
 
         //--------------Reviews-------------------
         public string SelectAllReviews()

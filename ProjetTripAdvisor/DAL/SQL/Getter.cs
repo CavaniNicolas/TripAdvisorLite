@@ -57,6 +57,31 @@ namespace DAL
             return (new User());
         }
 
+        public List<User> GetUserByAny(SqlConnectionStringBuilder cb, int id = -1, string name = null)
+        {
+            using (var connection = new SqlConnection(cb.ConnectionString))
+            {
+                connection.Open();
+                List<User> list = new List<User>();
+                Queries q = new Queries();
+                var cmd = new SqlCommand(q.SelectUserByAny(id, name), connection);
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            User u = new User();
+                            u.UserId = reader.GetInt32(reader.GetOrdinal("UserId"));
+                            u.Username = reader.GetString(reader.GetOrdinal("Username"));
+                            list.Add(u);
+                        }
+                    }
+                }
+                return list;
+            }
+        }
+
         //----------------------------------Reviews--------------------------------
         public List<Review> GetAllReviews(SqlConnectionStringBuilder cb)
         {
