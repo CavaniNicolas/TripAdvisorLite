@@ -24,7 +24,28 @@ function Services() {
   	const SearchbarFunction = txt => {
                                 fetch('https://localhost:44398/services?name='+txt)
                                   .then(response => response.json())
-								  .then(json => setServiceData(json));
+								  .then(json =>	setServiceData(json)
+								  );
+	}
+
+	//lodash
+	const Sorter = (ServiceA, ServiceB) => {
+		if(menuClicked === 'name'){
+			return (ServiceA.name.localeCompare(ServiceB.name));
+		}
+		if(menuClicked === 'id'){
+			return (ServiceA.id > ServiceB.id);
+		}
+		if(menuClicked === 'adress'){
+			return (ServiceA.adress.localeCompare(ServiceB.adress));
+		}
+	}
+
+	const [menuClicked, setMenuClicked] = useState(null);
+  	async function ClickSort (what){
+		setMenuClicked(what);
+		console.log(menuClicked);
+		setServiceData(await serviceData.sort(Sorter));
   	}
 
 	return (
@@ -47,10 +68,10 @@ function Services() {
 				</datalist>
         	</div>
 
-			<div className="col-1">serviceid</div>
-			<div className="col-2">name</div>
-			<div className="col-3">adress</div>
-			<div className="col-1">note</div>
+			<div className="col-1" onClick={() => ClickSort('id') }>serviceid</div>
+			<div className="col-2" onClick={() => ClickSort('name') }>name</div>
+			<div className="col-3" onClick={() => ClickSort('adress') }>adress</div>
+			<div className="col-1" onClick={() => ClickSort('note') }>note</div>
 			<h1> </h1>
 			{ServiceList}
         </div>
