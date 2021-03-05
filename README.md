@@ -17,5 +17,5 @@ Trucs à installer :
 
 - Si ça parle d'une erreur de DB avec Azure, donnez nous votre adresse IP pour qu'on vous ajoute.
 
-- Si le site marche mais qu'il n'y a pas de données, F12. Si il y a des erreurs CORS, installer une plugin sur votre browser pour empecher les erreurs CORS.
-- -Pour Chrome j'ai pris ça https://chrome.google.com/webstore/detail/moesif-origin-cors-change/digfbfaphojjndkpccljibejjbppifbc 
+- Si le site marche mais qu'il n'y a pas de données, F12. Si il y a des erreurs CORS, installer une plugin sur votre browser pour empecher les erreurs CORS.   
+Pour Chrome j'ai pris ça https://chrome.google.com/webstore/detail/moesif-origin-cors-change/digfbfaphojjndkpccljibejjbppifbc 
