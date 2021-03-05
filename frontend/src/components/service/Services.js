@@ -7,7 +7,7 @@ function Services() {
 
 	const [serviceData, setServiceData] = useState([]);
 	useEffect(() => 
-	  fetch('https://localhost:44398/servicebyany')
+	  fetch('https://localhost:44398/services')
 		.then(response => response.json())
 		.then(json => setServiceData(json))
 	  ,[]);
@@ -23,7 +23,7 @@ function Services() {
 	
 	const [searchText, setSearchText] = useState(null);
   	const SearchbarFunction = txt => {
-                                fetch('https://localhost:44398/servicebyany?name='+txt)
+                                fetch('https://localhost:44398/services?name='+txt)
                                   .then(response => response.json())
 								  .then(json => setServiceData(json));
   	}

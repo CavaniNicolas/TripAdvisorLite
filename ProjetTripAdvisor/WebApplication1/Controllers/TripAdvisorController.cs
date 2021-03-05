@@ -20,54 +20,54 @@ namespace WebApplication1.Controllers
             this.repo = repo;
         }
 
+        //[HttpGet("/users")]
+        //public IEnumerable<User> GetAllUsers()
+        //{
+        //    return repo.GetAllUsers();
+        //}
+        //[HttpGet("/user")]
+        //public User GetUserById(int id)
+        //{
+        //    return repo.GetUserById(id);
+        //}
         [HttpGet("/users")]
-        public IEnumerable<User> GetAllUsers()
-        {
-            return repo.GetAllUsers();
-        }
-        [HttpGet("/user")]
-        public User GetUserById(int id)
-        {
-            return repo.GetUserById(id);
-        }
-        [HttpGet("/userbyany")]
         public IEnumerable<User> GetUserByAny(int id = -1, string name = null)
         {
             return repo.GetUserByAny(id, name);
         }
 
+        //[HttpGet("/services")]
+        //public IEnumerable<Service> GetAllServices()
+        //{
+        //    return repo.GetAllServices();
+        //}
+        //[HttpGet("/service")]
+        //public Service GetServiceById(int id)
+        //{
+        //    return repo.GetServiceById(id);
+        //}
+        //[HttpGet("/servicebyname")]
+        //public IEnumerable<Service> GetServiceByName(string name)
+        //{
+        //    return repo.GetServiceByName(name);
+        //}
         [HttpGet("/services")]
-        public IEnumerable<Service> GetAllServices()
-        {
-            return repo.GetAllServices();
-        }
-        [HttpGet("/service")]
-        public Service GetServiceById(int id)
-        {
-            return repo.GetServiceById(id);
-        }
-        [HttpGet("/servicebyname")]
-        public IEnumerable<Service> GetServiceByName(string name)
-        {
-            return repo.GetServiceByName(name);
-        }
-        [HttpGet("/servicebyany")]
         public IEnumerable<Service> GetServiceByAny(int id = -1, string adress = null, string name = null)
         {
             return repo.GetServiceByAny(id, adress, name);
         }
 
+        //[HttpGet("/reviews")]
+        //public IEnumerable<Review> GetAllReviews()
+        //{
+        //    return repo.GetAllReviews();
+        //}
+        //[HttpGet("/review")]
+        //public Review GetReviewById(int id)
+        //{
+        //    return repo.GetReviewById(id);
+        //}
         [HttpGet("/reviews")]
-        public IEnumerable<Review> GetAllReviews()
-        {
-            return repo.GetAllReviews();
-        }
-        [HttpGet("/review")]
-        public Review GetReviewById(int id)
-        {
-            return repo.GetReviewById(id);
-        }
-        [HttpGet("/reviewbyany")]
         public IEnumerable<Review> GetReviewByAny(int id = -1, int userid = -1, int serviceid = -1, int note = -1, string texte = null, string date = null)
         {
             return repo.GetReviewByAny(id,userid,serviceid,note,texte,date);
