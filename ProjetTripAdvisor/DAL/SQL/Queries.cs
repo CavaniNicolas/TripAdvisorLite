@@ -21,10 +21,6 @@ namespace DAL
         {
             return @"DELETE FROM USERR";
         }
-        public string SelectUserById(int id)
-        {
-            return @"SELECT * FROM Userr WHERE UserId = " + id;
-        }
         public string SelectUserByAny(int id = -1, string name = null)
         {
             if (id == -1)
@@ -65,10 +61,6 @@ namespace DAL
         public string EmptyReview()
         {
             return @"DELETE FROM Review";
-        }
-        public string SelectReviewById(int id)
-        {
-            return @"SELECT * FROM Review WHERE reviewId = " + id;
         }
         public string SelectReviewByAny(int id = -1, int userid = -1, int serviceid = -1, int note = -1, string texte = null, string date = null)
         {
@@ -140,14 +132,6 @@ namespace DAL
         public string EmptyService()
         {
             return @"DELETE FROM Service";
-        }
-        public string SelectServiceById(int id)
-        {
-            return @"SELECT * FROM Service WHERE serviceId = " + id;
-        }
-        public string SelectServiceByName(string name)
-        {
-            return @"SELECT * FROM Service WHERE name LIKE '" + name + "'";
         }
         public string SelectServiceByAny(int id = -1, string adress = null, string name=null)
         {
