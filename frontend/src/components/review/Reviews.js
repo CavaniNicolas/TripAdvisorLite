@@ -6,7 +6,7 @@ function Reviews () {
 
 	const [reviewData, setReviewData] = useState([]);
 	useEffect(() => 
-	  fetch('https://localhost:44398/reviews')
+	  fetch((window.location.href).replace('3000','44398').replace('http','https'))
 		.then(response => response.json())
 		.then(json => setReviewData(json))
 	  ,[]);

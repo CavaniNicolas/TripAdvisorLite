@@ -6,7 +6,7 @@ function Users() {
 
 	const [userData, setUserData] = useState([]);
 	useEffect(() => 
-	  fetch('https://localhost:44398/users')
+	  fetch((window.location.href).replace('3000','44398').replace('http','https'))
 		.then(response => response.json())
 		.then(json => setUserData(json))
 	  ,[]);

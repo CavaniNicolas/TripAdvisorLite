@@ -11,7 +11,7 @@ const HomePage = () => (
     <div>
 
       <div id="menu-outer">
-        <div class="table">
+        <div className="table">
           <ul id="horizontal-list">
               <li>
                 <Link to="/users">Users</Link>

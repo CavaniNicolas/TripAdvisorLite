@@ -7,7 +7,7 @@ function Services() {
 
 	const [serviceData, setServiceData] = useState([]);
 	useEffect(() => 
-	  fetch('https://localhost:44398/services')
+	  fetch((window.location.href).replace('3000','44398').replace('http','https'))
 		.then(response => response.json())
 		.then(json => setServiceData(json))
 	  ,[]);
@@ -51,6 +51,7 @@ function Services() {
 			<div className="col-1">serviceid</div>
 			<div className="col-2">name</div>
 			<div className="col-3">adress</div>
+			<div className="col-1">note</div>
 			<div className="col-2">Click to view reviews</div>
 			<h1> </h1>
 			{ServiceList}
