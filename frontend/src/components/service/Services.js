@@ -20,8 +20,7 @@ function Services() {
 	const [previousText, setPreviousText] = useState(null);
 
 	let OptionList = serviceData.map(service => <Option Name={service.name} key={service.serviceId}/>);
-	
-	const [searchText, setSearchText] = useState(null);
+
   	const SearchbarFunction = txt => {
                                 fetch('https://localhost:44398/services?name='+txt)
                                   .then(response => response.json())
