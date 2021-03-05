@@ -20,6 +20,7 @@ function Users() {
 		  <h1>users</h1>
           <div className="col-1">userid</div>
           <div className="col-1">username</div>
+		  <div className="col-1">nb_reviews</div>
 		  <h1> </h1>
 		  {UserList}
         </div>

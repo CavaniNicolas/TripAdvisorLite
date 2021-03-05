@@ -52,7 +52,6 @@ function Services() {
 			<div className="col-2">name</div>
 			<div className="col-3">adress</div>
 			<div className="col-1">note</div>
-			<div className="col-2">Click to view reviews</div>
 			<h1> </h1>
 			{ServiceList}
         </div>

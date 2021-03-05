@@ -9,7 +9,7 @@ function Service({id,name,adress}) {
 
     const [reviewData, setReviewData] = useState([]);
 	useEffect(() => 
-	  fetch('https://localhost:44398/reviews?serviceid='+id)
+	  fetch('https://localhost:44398'+link)
 		.then(response => response.json())
 		.then(json => setReviewData(json))
 	  ,[]);
@@ -32,8 +32,7 @@ function Service({id,name,adress}) {
             <div className="col-1">{id}</div>
             <div className="col-2">{name}</div>
             <div className="col-3">{adress}</div>
-            <div className="col-1">{MoyReviews(reviewData)}/5</div>
-            <div className="col-2 review-button"><Link to={link}>Reviews</Link></div>
+            <div className="col-1"><Link to={link}>{MoyReviews(reviewData)}/5</Link></div>
         </div>
 
     );
