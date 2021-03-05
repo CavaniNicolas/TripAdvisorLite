@@ -22,9 +22,9 @@ function Service({id,name,adress}) {
           i++;
         });
         if (i === 0){
-          i=1;
+          return "no reviews"
         }
-        return (rep/i);
+        return (rep/i) + "/5";
     }
 
     return (
@@ -32,7 +32,7 @@ function Service({id,name,adress}) {
             <div className="col-1">{id}</div>
             <div className="col-2">{name}</div>
             <div className="col-3">{adress}</div>
-            <div className="col-1"><Link to={link}>{MoyReviews(reviewData)}/5</Link></div>
+            <div className="col-1"><Link to={link}>{MoyReviews(reviewData)}</Link></div>
         </div>
 
     );
