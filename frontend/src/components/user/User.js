@@ -17,9 +17,9 @@ function User({id,name}) {
 
     return (
         <div className="user">
-            <div className="col-1">{id}</div>
-            <div className="col-1">{name}</div>
-            <div className="col-1"><Link to={link}>{reviewData.length}</Link></div>
+            <div className="col-2">{id}</div>
+            <div className="col-2">{name}</div>
+            <div className="col-2"><Link to={link}>{reviewData.length}</Link></div>
         </div>
     );
 }

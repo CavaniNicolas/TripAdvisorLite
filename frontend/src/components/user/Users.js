@@ -15,12 +15,36 @@ function Users() {
 	  key={user.userId}
 	/>);
 
+	const [menuClicked, setMenuClicked] = useState(null);
+  	function ClickSort (what){
+		const Sorter = (UserA, UserB) => {
+			if(what === 'name'){
+				return (UserA.username.localeCompare(UserB.username));
+			}
+			if(what === 'id'){
+				return (UserA.userId.toString().localeCompare(UserB.userId.toString()));
+			}
+			if(what === 'nb'){
+				console.log('todo');
+				return (1);
+			}
+		}
+		setMenuClicked(what);
+		setUserData(userData.sort(Sorter));
+	  }
+	  
+	function Arrow (what){
+		if (what === menuClicked){
+			return ' v';
+		}
+	}
+
     return (
 		<div className="row">
 		  <h1>users</h1>
-          <div className="col-1">userid</div>
-          <div className="col-1">username</div>
-		  <div className="col-1">nb_reviews</div>
+          <div className="col-2"onClick={() => ClickSort('id') }>userid{Arrow('id')}</div>
+          <div className="col-2"onClick={() => ClickSort('name') }>username{Arrow('name')}</div>
+		  <div className="col-2"onClick={() => ClickSort('nb') }>nb_reviews{Arrow('nb')}</div>
 		  <h1> </h1>
 		  {UserList}
         </div>

@@ -29,24 +29,34 @@ function Services() {
 	}
 
 	//lodash
-	const Sorter = (ServiceA, ServiceB) => {
-		if(menuClicked === 'name'){
-			return (ServiceA.name.localeCompare(ServiceB.name));
-		}
-		if(menuClicked === 'id'){
-			return (ServiceA.id > ServiceB.id);
-		}
-		if(menuClicked === 'adress'){
-			return (ServiceA.adress.localeCompare(ServiceB.adress));
-		}
-	}
+	
 
 	const [menuClicked, setMenuClicked] = useState(null);
-  	async function ClickSort (what){
+  	function ClickSort (what){
+		const Sorter = (ServiceA, ServiceB) => {
+			if(what === 'name'){
+				return (ServiceA.name.localeCompare(ServiceB.name));
+			}
+			if(what === 'id'){
+				return (ServiceA.serviceId.toString().localeCompare(ServiceB.serviceId.toString()));
+			}
+			if(what === 'adress'){
+				return (ServiceA.adress.localeCompare(ServiceB.adress));
+			}
+			if(what === 'note'){
+				console.log('todo');
+				return (1);
+			}
+		}
 		setMenuClicked(what);
-		console.log(menuClicked);
-		setServiceData(await serviceData.sort(Sorter));
-  	}
+		setServiceData(serviceData.sort(Sorter));
+	  }
+	  
+	function Arrow (what){
+		if (what === menuClicked){
+			return ' v';
+		}
+	}
 
 	return (
 		<div className="row">
@@ -68,10 +78,10 @@ function Services() {
 				</datalist>
         	</div>
 
-			<div className="col-1" onClick={() => ClickSort('id') }>serviceid</div>
-			<div className="col-2" onClick={() => ClickSort('name') }>name</div>
-			<div className="col-3" onClick={() => ClickSort('adress') }>adress</div>
-			<div className="col-1" onClick={() => ClickSort('note') }>note</div>
+			<div className="col-1" onClick={() => ClickSort('id') }>serviceid{Arrow('id')}</div>
+			<div className="col-2" onClick={() => ClickSort('name') }>name{Arrow('name')}</div>
+			<div className="col-3" onClick={() => ClickSort('adress') }>adress{Arrow('adress')}</div>
+			<div className="col-1" onClick={() => ClickSort('note') }>note{Arrow('note')}</div>
 			<h1> </h1>
 			{ServiceList}
         </div>
