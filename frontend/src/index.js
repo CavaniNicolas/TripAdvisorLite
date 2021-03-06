@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './css/index.css';
-import PageManager from './HomePage.js';
+import HomePage from './HomePage.js';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <PageManager />
+    <HomePage />
   </React.StrictMode>,
   document.getElementById('root')
 );

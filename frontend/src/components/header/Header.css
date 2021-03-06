@@ -1,18 +1,26 @@
-.App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: red;
-  }
+
+.Logo
+{
+  font-size: calc(25px + 2vmin);
+  color: purple;
+}
+
+.app-header
+{
+  background-color: #282c34;
+  min-height: 20mm;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: red;
+}
 
 
-  .gender_checker {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    direction: row;
-  }
+.gender_checker {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  direction: row;
+}
