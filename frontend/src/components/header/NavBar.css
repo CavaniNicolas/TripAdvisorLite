@@ -1,38 +1,72 @@
 
-#menu-outer {
-	height: 84px;
+.navBox {
+	height: inherit;
+	margin-left: 30%;
+
+	
+	display: flex;
+	width: fill-available;
+	/*flex-direction: column;
+	align-items: center;
+	justify-content: center; */
+	
+	position: absolute;
+	
+	/* border: 1px solid black; */
 }
 
-.table {
-	display: table; /* Allow the centering to work */
-	margin: 0 auto;
+
+.navMenu {
+ 	height: 80%;
+	margin: 2mm;
+
+	position: relative;
+	/* à 50%/50% du parent référent (child doit etre relatif, le parent est absolute) */
+	top: 50%; left: 40%;
+	transform: translate(-70%, -50%);
+
+	/* background-color: gray; */
+
+	/* border: 1px solid black; */
 }
 
 ul#horizontal-list {
-	min-width: 696px;
-	list-style: none;
-	padding-top: 20px;
+	max-width: fill-available;
+
+	position: relative;
+	/* à 50%/50% du parent référent (child doit etre relatif, le parent est absolute) */
+	top: 50%; left: 50%;
+	transform: translate(-50%, -50%);
+
+	/* border: 1px solid black; */
 }
 
 ul#horizontal-list li {
-	display: inline; /* (normalement) This will not force breaks after the list items and they will line up horizontally as far as they are able */
+	display: inline-flex;
+	width: 200px;
 
 	background-color: lightgreen;
 	border: solid darkgreen;
 	border-radius: 10px;
+
+	margin-left: 1em;
+	margin-right: 1em;
 }
 
-ul#horizontal-list li a {
+/*ul#horizontal-list li a {*/
+.navLink {
 	color: black;
 	text-decoration: none;
+	font-size: 150%;
 }
 
+
 ul#horizontal-list li :hover{
-	display: inline; /* (normalement) This will not force breaks after the list items and they will line up horizontally as far as they are able */
+	display: inline;
+	width: 200px;
 
 	color: black;
 	background-color: bisque;
 	border: solid darkgreen;
 	border-radius: 10px;
 }
-

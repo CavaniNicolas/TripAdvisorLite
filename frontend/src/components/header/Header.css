@@ -1,26 +1,53 @@
 
-.Logo
-{
-  font-size: calc(25px + 2vmin);
-  color: purple;
-}
-
 .app-header
 {
+  margin-top: 0px;
   background-color: #282c34;
-  min-height: 20mm;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  height: 130px;
+  width: fill-available;
+
   font-size: calc(10px + 2vmin);
   color: red;
+
+  /* border: 1px solid black; */
+}
+
+.logoBox
+{
+  float: left;
+  width: 30%;
+  height: inherit;
+  position: absolute;
+
+  /* border: 1px solid black; */
+}
+
+.logoWrap {
+  width: 70%;
+  height: 80%;
+  
+  position: relative;
+  /* à 50%/50% du parent référent (child doit etre relatif, le parent est absolute) */
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: gray;
+	border: 3mm ridge rgb(231, 80, 211);
 }
 
 
-.gender_checker {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  direction: row;
+.logo
+{
+  float: left;
+  
+  position: relative;
+  /* à 50%/50% du parent référent (child doit etre relatif, le parent est absolute) */
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-size: 180%;
+  color: purple;
+
+  /* border: 1px solid black; */
 }
+
