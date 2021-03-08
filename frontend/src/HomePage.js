@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import UsersPage from './pages/UsersPage.js'
 import ServicesPage from './pages/ServicesPage.js'
 import ReviewsPage from './pages/ReviewsPage.js'
+import AddServicePage from './pages/AddServicePage.js'
 
 const HomePage = () => (
   <Router>
@@ -24,6 +25,7 @@ const HomePage = () => (
               </li>
           </ul>
         </div>
+        <Link to="/addservice">Add a service</Link>
       </div>
 
 
@@ -31,7 +33,8 @@ const HomePage = () => (
 
       <Route path="/users" component={UsersPage} />
       <Route path="/services" component={ServicesPage} />
-      <Route path="/reviews" component={ReviewsPage} />
+      <Route path="/reviews" component={ReviewsPage} />.
+      <Route path="/addservice" component={AddServicePage} />
     </div>
   </Router>
 );
