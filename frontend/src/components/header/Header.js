@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
         return (
             <header className="app-header">
-                <h1>Trip Advisor</h1>
+                <h1>Trip Advizor</h1>
             </header>
         );
     }

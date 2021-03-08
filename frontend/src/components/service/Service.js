@@ -32,7 +32,7 @@ function Service({id,name,adress,type}) {
             <div className="col-1">{id}</div>
             <div className="col-2">{name}</div>
             <div className="col-3">{adress}</div>
-            <div className="col-1">{type}</div>
+            <div className="col-2">{type}</div>
             <div className="col-1">{MoyReviews(reviewData)}⠀<Link to={link}>({reviewData.length}reviews)</Link></div>
         </div>
 
