@@ -126,7 +126,7 @@ namespace DAL
         public string InsertService(int id, string address, string name, string type)
         {
             return @"SET IDENTITY_INSERT Service ON 
-                    INSERT INTO Service(ServiceId, Adress, Name)
+                    INSERT INTO Service(ServiceId, Adress, Name, Type)
                     VALUES (" + id + ",'" + address + "','" + name + "','" + type + "')";
         }
         public string EmptyService()

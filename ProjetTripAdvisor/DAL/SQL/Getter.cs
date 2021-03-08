@@ -32,6 +32,16 @@ namespace DAL
                 return list;
             }
         }
+        public void InsertUser(SqlConnectionStringBuilder cb, int id, string name)
+        {
+            using (var connection = new SqlConnection(cb.ConnectionString))
+            {
+                connection.Open();
+                Queries q = new Queries();
+                var cmd = new SqlCommand(q.InsertUser(id, name), connection);
+                using (SqlDataReader reader = cmd.ExecuteReader()){}
+            }
+        }
 
         //----------------------------------Reviews--------------------------------
         public List<Review> GetReviewByAny(SqlConnectionStringBuilder cb, int id = -1, int userid = -1, int serviceid = -1, int note = -1, string texte = null, string date = null)
@@ -62,6 +72,16 @@ namespace DAL
                 return list;
             }
         }
+        public void InsertReview(SqlConnectionStringBuilder cb, int id, int userid, int serviceid, int note, string texte, string date)
+        {
+            using (var connection = new SqlConnection(cb.ConnectionString))
+            {
+                connection.Open();
+                Queries q = new Queries();
+                var cmd = new SqlCommand(q.InsertReview(id, userid, serviceid, note, texte, date), connection);
+                using (SqlDataReader reader = cmd.ExecuteReader()){}
+            }
+        }
         //----------------------------------Services--------------------------------
         public List<Service> GetServiceByAny(SqlConnectionStringBuilder cb, int id = -1, string adress = null, string name = null, string type = null)
         {
@@ -89,6 +109,15 @@ namespace DAL
                 return list;
             }
         }
+        public void InsertService(SqlConnectionStringBuilder cb, int id, string adress, string name, string type)
+        {
+            using (var connection = new SqlConnection(cb.ConnectionString))
+            {
+                connection.Open();
+                Queries q = new Queries();
+                var cmd = new SqlCommand(q.InsertService(id, adress, name, type), connection);
+                using (SqlDataReader reader = cmd.ExecuteReader()){}
+            }
+        }
     }
-
 }
