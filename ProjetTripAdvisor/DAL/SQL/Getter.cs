@@ -63,14 +63,14 @@ namespace DAL
             }
         }
         //----------------------------------Services--------------------------------
-        public List<Service> GetServiceByAny(SqlConnectionStringBuilder cb, int id = -1, string adress = null, string name = null)
+        public List<Service> GetServiceByAny(SqlConnectionStringBuilder cb, int id = -1, string adress = null, string name = null, string type = null)
         {
             using (var connection = new SqlConnection(cb.ConnectionString))
             {
                 connection.Open();
                 List<Service> list = new List<Service>();
                 Queries q = new Queries();
-                var cmd = new SqlCommand(q.SelectServiceByAny(id,adress,name), connection);
+                var cmd = new SqlCommand(q.SelectServiceByAny(id,adress,name,type), connection);
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
                     if (reader.HasRows)
@@ -81,6 +81,7 @@ namespace DAL
                             s.ServiceId = reader.GetInt32(reader.GetOrdinal("ServiceId"));
                             s.Adress = reader.GetString(reader.GetOrdinal("Adress"));
                             s.Name = reader.GetString(reader.GetOrdinal("Name"));
+                            s.Type = reader.GetString(reader.GetOrdinal("Type"));
                             list.Add(s);
                         }
                     }

@@ -9,6 +9,8 @@ namespace DAL.Models
         public int ServiceId { get; set; }
         public string Adress { get; set; }
         public string Name { get; set; }
+
+        public string Type { get; set; }
         //public List<Review> ReviewList { get; set; }
 
         public Service()
@@ -16,7 +18,7 @@ namespace DAL.Models
             ServiceId = 0;
             Name = " ";
             Adress = " ";
-            //ReviewList = new List<Review>();
+            Type = "";
         }
 
         public override string ToString()

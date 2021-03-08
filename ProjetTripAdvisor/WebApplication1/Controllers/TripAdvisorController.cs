@@ -27,9 +27,9 @@ namespace WebApplication1.Controllers
         }
 
         [HttpGet("/services")]
-        public IEnumerable<Service> GetServiceByAny(int id = -1, string adress = null, string name = null)
+        public IEnumerable<Service> GetServiceByAny(int id = -1, string adress = null, string name = null, string type = null)
         {
-            return repo.GetServiceByAny(id, adress, name);
+            return repo.GetServiceByAny(id, adress, name, type);
         }
 
         [HttpGet("/reviews")]

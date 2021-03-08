@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 
-function Service({id,name,adress}) {
+function Service({id,name,adress,type}) {
     var link =  "/reviews?serviceid="+id;
 
     const [reviewData, setReviewData] = useState([]);
@@ -32,6 +32,7 @@ function Service({id,name,adress}) {
             <div className="col-1">{id}</div>
             <div className="col-2">{name}</div>
             <div className="col-3">{adress}</div>
+            <div className="col-1">{type}</div>
             <div className="col-1">{MoyReviews(reviewData)}⠀<Link to={link}>({reviewData.length}reviews)</Link></div>
         </div>
 

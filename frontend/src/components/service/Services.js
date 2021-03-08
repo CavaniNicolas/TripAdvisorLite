@@ -12,7 +12,7 @@ function Services() {
 		.then(json => setServiceData(json))
 	  ,[]);
   
-	let ServiceList = serviceData.map(service => <Service id={service.serviceId} name={service.name} adress={service.adress}
+	let ServiceList = serviceData.map(service => <Service id={service.serviceId} name={service.name} adress={service.adress} type={service.type}
 	  key={service.serviceId}
 	/>);
 
@@ -46,6 +46,9 @@ function Services() {
 			if(what === 'note'){
 				console.log('todo');
 				return (1);
+			}
+			if(what === 'type'){
+				return (ServiceA.type.localeCompare(ServiceB.type));
 			}
 		}
 		setMenuClicked(what);
@@ -81,6 +84,7 @@ function Services() {
 			<div className="col-1" onClick={() => ClickSort('id') }>serviceid{Arrow('id')}</div>
 			<div className="col-2" onClick={() => ClickSort('name') }>name{Arrow('name')}</div>
 			<div className="col-3" onClick={() => ClickSort('adress') }>adress{Arrow('adress')}</div>
+			<div className="col-1" onClick={() => ClickSort('type') }>type{Arrow('type')}</div>
 			<div className="col-1" onClick={() => ClickSort('note') }>note{Arrow('note')}</div>
 			<h1> </h1>
 			{ServiceList}

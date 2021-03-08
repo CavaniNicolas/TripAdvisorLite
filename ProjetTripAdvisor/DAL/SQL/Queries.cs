@@ -123,17 +123,17 @@ namespace DAL
         {
             return @"SELECT * FROM Service";
         }
-        public string InsertService(int id, string address, string name)
+        public string InsertService(int id, string address, string name, string type)
         {
             return @"SET IDENTITY_INSERT Service ON 
                     INSERT INTO Service(ServiceId, Adress, Name)
-                    VALUES (" + id + ",'" + address + "','" + name + "')";
+                    VALUES (" + id + ",'" + address + "','" + name + "','" + type + "')";
         }
         public string EmptyService()
         {
             return @"DELETE FROM Service";
         }
-        public string SelectServiceByAny(int id = -1, string adress = null, string name=null)
+        public string SelectServiceByAny(int id = -1, string adress = null, string name=null, string type = null)
         {
             if (name == null)
             {
@@ -141,22 +141,34 @@ namespace DAL
                 {
                     if (id == -1)
                     {
-                        return @"SELECT * FROM Service";
+                        if (type == null)
+                            return @"SELECT * FROM Service";
+                        else
+                            return @"SELECT * FROM Service WHERE type LIKE '%" + type + "%'";
                     }
                     else
                     {
-                        return @"SELECT * FROM Service WHERE serviceId = " + id;
+                        if (type == null)
+                            return @"SELECT * FROM Service WHERE serviceId = " + id;
+                        else
+                            return @"SELECT * FROM Service WHERE type LIKE '%" + type + "%' and serviceId = " + id;
                     }
                 }
                 else
                 {
                     if (id == -1)
                     {
-                        return @"SELECT * FROM Service WHERE adress LIKE '" + adress + "'";
+                        if (type == null)
+                            return @"SELECT * FROM Service WHERE adress LIKE '%" + adress + "%'";
+                        else
+                            return @"SELECT * FROM Service WHERE adress LIKE '%" + adress + "%'" + " AND type LIKE '%" + type + "%'";
                     }
                     else
                     {
-                        return @"SELECT * FROM Service WHERE serviceId = " + id + " AND adress LIKE '" + adress +"'";
+                        if (type == null)
+                            return @"SELECT * FROM Service WHERE serviceId = " + id + " AND adress LIKE '%" + adress +"%'";
+                        else
+                            return @"SELECT * FROM Service WHERE serviceId = " + id + " AND adress LIKE '%" + adress + "%' AND type LIKE '%" + type + "%'";
                     }
                 }
             }
@@ -166,22 +178,34 @@ namespace DAL
                 {
                     if (id == -1)
                     {
-                        return @"SELECT * FROM Service WHERE name LIKE '" + name + "'";
+                        if(type == null)
+                            return @"SELECT * FROM Service WHERE name LIKE '%" + name + "%'";
+                        else
+                            return @"SELECT * FROM Service WHERE name LIKE '%" + name + "%' AND type LIKE '%" + type + "%'";
                     }
                     else
                     {
-                        return @"SELECT * FROM Service WHERE serviceId = " + id + "AND name LIKE '" + name + "'";
+                        if (type == null)
+                            return @"SELECT * FROM Service WHERE serviceId = " + id + "AND name LIKE '%" + name + "%'";
+                        else
+                            return @"SELECT * FROM Service WHERE serviceId = " + id + "AND name LIKE '%" + name + "%' AND type LIKE '%" + type + "%'";
                     }
                 }
                 else
                 {
                     if (id == -1)
                     {
-                        return @"SELECT * FROM Service WHERE adress LIKE '" + adress + "' AND name LIKE '" + name +"'";
+                        if(type == null)
+                            return @"SELECT * FROM Service WHERE adress LIKE '%" + adress + "%' AND name LIKE '%" + name +"%'";
+                        else
+                            return @"SELECT * FROM Service WHERE adress LIKE '%" + adress + "%' AND name LIKE '%" + name + "%' AND type LIKE '%" + type + "%'";
                     }
                     else
                     {
-                        return @"SELECT * FROM Service WHERE serviceId = " + id + " AND adress LIKE '" + adress + "' AND name LIKE '" + name + "'";
+                        if(type == null)
+                            return @"SELECT * FROM Service WHERE serviceId = " + id + " AND adress LIKE '%" + adress + "%' AND name LIKE '%" + name + "%'";
+                        else
+                            return @"SELECT * FROM Service WHERE serviceId = " + id + " AND adress LIKE '%" + adress + "%' AND name LIKE '%" + name + "%' AND type LIKE '%" + type + "%'";
                     }
                 }
             }
