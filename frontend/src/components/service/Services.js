@@ -68,7 +68,7 @@ function Services() {
 				return (ServiceA.name.localeCompare(ServiceB.name));
 			}
 			if(what === 'id'){
-				return (ServiceA.serviceId.toString().localeCompare(ServiceB.serviceId.toString()));
+				return (ServiceA.serviceId - ServiceB.serviceId);
 			}
 			if(what === 'adress'){
 				return (ServiceA.adress.localeCompare(ServiceB.adress));

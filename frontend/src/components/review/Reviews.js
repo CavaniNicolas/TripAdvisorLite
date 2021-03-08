@@ -23,7 +23,7 @@ function Reviews () {
 				return (ReviewA.reviewId.toString().localeCompare(ReviewB.reviewId.toString()));
 			}
 			if(what === 'userid'){
-				return (ReviewA.userId.toString().localeCompare(ReviewB.userId.toString()));
+				return (ReviewA.userId - ReviewB.userId);
 			}
 			if(what === 'serviceid'){
 				return (ReviewA.serviceId.toString().localeCompare(ReviewB.serviceId.toString()));

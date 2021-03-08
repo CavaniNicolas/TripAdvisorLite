@@ -22,7 +22,7 @@ function Users() {
 				return (UserA.username.localeCompare(UserB.username));
 			}
 			if(what === 'id'){
-				return (UserA.userId.toString().localeCompare(UserB.userId.toString()));
+				return (UserA.userId - UserB.userId);
 			}
 			if(what === 'nb'){
 				console.log('todo');
