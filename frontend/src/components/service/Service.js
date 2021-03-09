@@ -30,9 +30,9 @@ function Service({id,name,adress,type}) {
     return (
         <div className="service">
             <div className="col-1">{id}</div>
-            <div className="col-1"><Link to={service_link}>{name}</Link></div>
-            <div className="col-1">{adress}</div>
-            <div className="col-1">{type}</div>
+            <div className="col-2"><Link to={service_link}>{name}</Link></div>
+            <div className="col-3">{adress}</div>
+            <div className="col-2">{type}</div>
             <div className="col-1">{MoyReviews(reviewData)}⠀<Link to={review_link}>({reviewData.length}reviews)</Link></div>
 
         </div>
