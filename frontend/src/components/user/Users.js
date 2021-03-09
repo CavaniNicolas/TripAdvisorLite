@@ -42,9 +42,11 @@ function Users() {
     return (
 		<div className="row">
 		  <h1>users</h1>
+
           <div className="col-2"onClick={() => ClickSort('id') }>userid{Arrow('id')}</div>
           <div className="col-2"onClick={() => ClickSort('name') }>username{Arrow('name')}</div>
 		  <div className="col-2"onClick={() => ClickSort('nb') }>nb_reviews{Arrow('nb')}</div>
+
 		  <h1> </h1>
 		  {UserList}
         </div>

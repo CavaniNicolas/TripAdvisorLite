@@ -2,4 +2,23 @@
 {
 	display: flex;
     color: blue;
+	float: right;
+}
+
+
+.form-label
+{
+    text-align: right;
+    color: blue;
+}
+
+.form-control
+{
+	float: right;
+}
+
+.search-bar
+{
+	float: center;
+
 }

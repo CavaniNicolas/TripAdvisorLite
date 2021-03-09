@@ -5,7 +5,8 @@ import { BrowserRouter as Router, Link } from "react-router-dom";
 
 function User({id,name}) {
 
-    var link =  "/reviews?userid="+id;
+    var link = "/reviews?userid="+id;
+    // <Route path = {link} component={LaReview} />
 
     const [reviewData, setReviewData] = useState([]);
 	useEffect(() => 
@@ -16,11 +17,13 @@ function User({id,name}) {
     
 
     return (
+
         <div className="user">
             <div className="col-2">{id}</div>
             <div className="col-2">{name}</div>
             <div className="col-2"><Link to={link}>{reviewData.length}</Link></div>
         </div>
+
     );
 }
 export default User;

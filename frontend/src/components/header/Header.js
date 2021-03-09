@@ -1,12 +1,42 @@
 import './Header.css';
-import 'bootstrap/dist/css/bootstrap.css';
+import "./NavBar.css";
+// import 'bootstrap/dist/css/bootstrap.css';
 
-    function Header() {
+import { Link } from "react-router-dom";
 
-        return (
-            <header className="app-header">
-                <h1>Trip Advizor</h1>
-            </header>
-        );
-    }
-    export default Header;
+function Header() {
+
+    return (
+        <header className="app-header">
+
+            <div className="logoBox">
+                <div className="logoWrap">
+                    <h1 className="logo">Trip Advisor</h1>
+                </div>
+            </div>
+
+
+            <div className="navBox">
+                <nav className="navMenu">
+                    <ul id="horizontal-list">
+                        <li>
+                            <Link className="navLink" to="/users">Users</Link>
+                        </li>
+                        <li>
+                            <Link className="navLink" to="/services">Services</Link>
+                        </li>
+                        <li>
+                            <Link className="navLink" to="/reviews">Reviews</Link>
+                        </li>
+                        <li>
+                            <Link to="/addservice">Add a service</Link>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+        </header>
+    );
+}
+export default Header;
+

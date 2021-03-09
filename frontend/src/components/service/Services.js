@@ -1,4 +1,5 @@
 
+import './Service.css';
 import { useState, useEffect } from 'react';
 import Service from './Service.js'
 import Option from './Option';
@@ -95,17 +96,20 @@ function Services() {
 		<div className="row">
 		  	<h1>services</h1>
 
-		  	<div className="name-search">
-				<label for="exampleDataList" className="form-label">Search by name</label>
-				<input className="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search..."
-				onChange={e => {
-					if (previousText !== e.target.value) {
-						clearTimeout(timer);
-						const timeoutId = setTimeout(() => SearchbarFunction(e.target.value), 1000);
-						setTimer(timeoutId);
-						setPreviousText(e.target.value);
-					}
-					}}/>
+		  	<div className="country-search">
+				<div className="search-bar">
+					<label for="exampleDataList" className="form-label">Search by name</label>
+					<input className="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search..."
+					onChange={e => {
+						if (previousText !== e.target.value) {
+							clearTimeout(timer);
+							const timeoutId = setTimeout(() => SearchbarFunction(e.target.value), 1000);
+							setTimer(timeoutId);
+							setPreviousText(e.target.value);
+						}
+						}}/>
+				</div>
+
 				<datalist id="datalistOptions">
 					{OptionList}
 				</datalist>
@@ -123,6 +127,7 @@ function Services() {
 			<div className="col-3" onClick={() => ClickSort('adress') }>adress{Arrow('adress')}</div>
 			<div className="col-2" onClick={() => ClickSort('type') }>type{Arrow('type')}</div>
 			<div className="col-1" onClick={() => ClickSort('note') }>note{Arrow('note')}</div>
+
 			<h1> </h1>
 			{ServiceList}
         </div>
