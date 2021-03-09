@@ -33,9 +33,6 @@ function AddService() {
             fetch("https://localhost:44398/insertservice?id="+MaxId+"&name="+name+"&adress="+adress+"&type="+type);
         }
     }
-    
-    const [timer, setTimer] = useState(null);
-    const [previousText, setPreviousText] = useState(null);
 
     const [name, setName] = useState(null);
     const [adress, setAdress] = useState(null);

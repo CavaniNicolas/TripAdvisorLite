@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './Service.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Service({id,name,adress,type}) {
     var review_link =  "/reviews?serviceid="+id;
@@ -30,7 +30,7 @@ function Service({id,name,adress,type}) {
     return (
         <div className="service">
             <div className="col-1">{id}</div>
-            <div className="col-2"><Link to={service_link}>{name}</Link></div>
+            <div className="col-3"><Link to={service_link}>{name}</Link></div>
             <div className="col-3">{adress}</div>
             <div className="col-2">{type}</div>
             <div className="col-1">{MoyReviews(reviewData)}⠀<Link to={review_link}>({reviewData.length}reviews)</Link></div>

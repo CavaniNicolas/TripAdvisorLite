@@ -59,9 +59,6 @@ function Services() {
 		setCType(type);
 }
 
-	//lodash
-	
-
 	const [menuClicked, setMenuClicked] = useState(null);
   	function ClickSort (what){
 		const Sorter = (ServiceA, ServiceB) => {
@@ -92,45 +89,138 @@ function Services() {
 		}
 	}
 
-	return (
-		<div className="row">
-		  	<h1>services</h1>
+	const [userData, setUserData] = useState([]);
+	useEffect(() => 
+	  fetch("https://localhost:44398/users")
+		.then(response => response.json())
+		.then(json => setUserData(json))
+	,[]);
+  
+    let MaxUserId = 0;
+    userData.forEach(user => {
+        if(user.userId > MaxUserId)
+            MaxUserId = user.userId;
+    });
+    MaxUserId = MaxUserId + 1;  
+	let userId = -1;
 
-		  	<div className="country-search">
-				<div className="search-bar">
-					<label for="exampleDataList" className="form-label">Search by name</label>
-					<input className="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search..."
-					onChange={e => {
-						if (previousText !== e.target.value) {
-							clearTimeout(timer);
-							const timeoutId = setTimeout(() => SearchbarFunction(e.target.value), 1000);
-							setTimer(timeoutId);
-							setPreviousText(e.target.value);
-						}
-						}}/>
+	const [reviewData, setReviewData] = useState([]);
+	useEffect(() => 
+	  fetch("https://localhost:44398/reviews")
+		.then(response => response.json())
+		.then(json => setReviewData(json))
+	  ,[]);
+  
+    let MaxId = 0;
+    reviewData.forEach(review => {
+        if(review.reviewId > MaxId)
+            MaxId = review.reviewId;
+    });
+    MaxId = MaxId + 1;  
+
+	var today = new Date();
+	var dd = String(today.getDate()).padStart(2, '0');
+	var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+	var yyyy = today.getFullYear();
+	today = dd + '/' + mm + '/' + yyyy;
+
+	const [note, setNote] = useState(null);
+	const [userName, setUserName] = useState(null);
+    const [text, setText] = useState(null);
+	
+	const SubmitFunction = (note,username,text) => {
+        if(note != null && username!=null && text !=null){
+			userData.forEach(user => {
+				if(user.username === username)
+					userId = user.userId;
+			});
+			if (userId === -1){
+				fetch("https://localhost:44398/insertuser?id="+MaxUserId+"&name="+username);
+				userId = MaxUserId;
+			}
+			setTimeout(() => fetch("https://localhost:44398/insertreview?id="+MaxId+"&userid="+userId+"&serviceid="+serviceData[0].serviceId+"&note="+note+"&texte="+text+"&date="+today), 1000);
+        }
+    }
+
+	function AddReview (){
+		if (serviceData.length===1){
+			return (
+			<div>
+				<h5>Leave a review for this service</h5>	
+				<div className="tom-form">
+					<div>
+						<label className="form-label">Username</label><br></br>
+						<input id="ListName" className="textarea" onChange={e => setUserName(e.target.value)}/>
+					</div>
+
+					<div>
+						<label className="form-label">Note</label><br></br>
+						<select class="form-control form-control-sm" onChange={e => setNote(e.target.value)}>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+						</select>
+					</div>
+
+					<div>
+						<label className="form-label">Comment</label><br></br>
+						<textarea name="comment" onChange={e => setText(e.target.value)}></textarea>
+					</div>
+
+					<button class="btn btn-primary" onClick = {() => SubmitFunction(note,userName,text)}> Submit review </button>
+				</div>
+			</div>); 
+		}
+		else return(<div></div>);
+	}
+
+	return (
+		<div>
+			<div className="row">
+				<h1>services</h1>
+
+				<div className="country-search">
+					<div className="search-bar">
+						<label for="exampleDataList" className="form-label">Search by name</label>
+						<input className="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search..."
+						onChange={e => {
+							if (previousText !== e.target.value) {
+								clearTimeout(timer);
+								const timeoutId = setTimeout(() => SearchbarFunction(e.target.value), 1000);
+								setTimer(timeoutId);
+								setPreviousText(e.target.value);
+							}
+							}}/>
+					</div>
+
+					<datalist id="datalistOptions">
+						{OptionList}
+					</datalist>
 				</div>
 
-				<datalist id="datalistOptions">
-					{OptionList}
-				</datalist>
-        	</div>
+				<div className="type-select">
+				<label for="exampleDataList" className="form-label">Select a service type</label>
+					<select className="selectpicker" aria-label=".form-select-lg example" onChange={e => SelectFunction(e.target.value)}>
+						{uniqueOptionTypes}
+					</select>
+				</div>
 
-			<div className="type-select">
-			<label for="exampleDataList" className="form-label">Select a service type</label>
-				<select className="selectpicker" aria-label=".form-select-lg example" onChange={e => SelectFunction(e.target.value)}>
-					{uniqueOptionTypes}
-				</select>
+				<div className="col-1" onClick={() => ClickSort('id') }>serviceid{Arrow('id')}</div>
+				<div className="col-3" onClick={() => ClickSort('name') }>name{Arrow('name')}</div>
+				<div className="col-3" onClick={() => ClickSort('adress') }>adress{Arrow('adress')}</div>
+				<div className="col-2" onClick={() => ClickSort('type') }>type{Arrow('type')}</div>
+				<div className="col-1" onClick={() => ClickSort('note') }>note{Arrow('note')}</div>
+
+				<h1> </h1>
+				{ServiceList}
 			</div>
-
-			<div className="col-1" onClick={() => ClickSort('id') }>serviceid{Arrow('id')}</div>
-			<div className="col-2" onClick={() => ClickSort('name') }>name{Arrow('name')}</div>
-			<div className="col-3" onClick={() => ClickSort('adress') }>adress{Arrow('adress')}</div>
-			<div className="col-2" onClick={() => ClickSort('type') }>type{Arrow('type')}</div>
-			<div className="col-1" onClick={() => ClickSort('note') }>note{Arrow('note')}</div>
-
-			<h1> </h1>
-			{ServiceList}
-        </div>
+			<div>
+				{AddReview()}
+			</div>
+		</div>
+		
 	);
 }
 export default Services;
