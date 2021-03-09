@@ -53,8 +53,8 @@ function Reviews () {
 		<div className="row">
 		  <h1>reviews</h1>
 		  <div className="col-1"onClick={() => ClickSort('reviewid') }>reviewid{Arrow('reviewid')}</div>
-		  <div className="col-1"onClick={() => ClickSort('userid') }>userid{Arrow('userid')}</div>
-		  <div className="col-1"onClick={() => ClickSort('serviceid') }>serviceid{Arrow('serviceid')}</div>
+		  <div className="col-1"onClick={() => ClickSort('userid') }>user{Arrow('userid')}</div>
+		  <div className="col-1"onClick={() => ClickSort('serviceid') }>service{Arrow('serviceid')}</div>
 		  <div className="col-1"onClick={() => ClickSort('note') }>note{Arrow('note')}</div>
 		  <div className="col-2"onClick={() => ClickSort('text') }>text{Arrow('text')}</div>
 		  <div className="col-2"onClick={() => ClickSort('date') }>date{Arrow('date')}</div>
