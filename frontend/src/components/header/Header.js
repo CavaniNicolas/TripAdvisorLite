@@ -28,6 +28,9 @@ function Header() {
                         <li>
                             <Link className="navLink" to="/reviews">Reviews</Link>
                         </li>
+                        <li>
+                            <Link to="/addservice">Add a service</Link>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -36,3 +39,4 @@ function Header() {
     );
 }
 export default Header;
+
