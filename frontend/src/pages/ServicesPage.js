@@ -1,11 +1,14 @@
 
 import './ServicesPage.css';
 import Services from '../components/service/Services.js';
+import Header from '../components/header/Header.js';
 
 function ServicesPage() {                     
 
   return (
+
     <section className="app-container">
+      <Header />
       <section className="app-content">
 
         <Services />

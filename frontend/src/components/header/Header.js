@@ -20,16 +20,10 @@ function Header() {
                 <nav className="navMenu">
                     <ul id="horizontal-list">
                         <li>
-                            <Link className="navLink" to="/users">Users</Link>
-                        </li>
-                        <li>
                             <Link className="navLink" to="/services">Services</Link>
                         </li>
                         <li>
-                            <Link className="navLink" to="/reviews">Reviews</Link>
-                        </li>
-                        <li>
-                            <Link to="/addservice">Add a service</Link>
+                            <Link className="navLink" to="/addservice">Add a service</Link>
                         </li>
                     </ul>
                 </nav>
