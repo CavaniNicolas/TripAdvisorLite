@@ -11,7 +11,7 @@ function Header() {
 
             <div className="logoBox">
                 <div className="logoWrap">
-                    <h1 className="logo">Trip Advisor</h1>
+                    <h1 className="logo" onClick={() => window.location.href="/services"}>Trip Advisor</h1>
                 </div>
             </div>
 
@@ -19,9 +19,6 @@ function Header() {
             <div className="navBox">
                 <nav className="navMenu">
                     <ul id="horizontal-list">
-                        <li>
-                            <Link className="navLink" to="/services">Services</Link>
-                        </li>
                         <li>
                             <Link className="navLink" to="/addservice">Add a service</Link>
                         </li>

@@ -21,7 +21,10 @@ ReactDOM.render(
         <Route path="/reviews" component={ReviewsPage} />
         <Route path="/addservice" component={AddServicePage} />
 
-        <Redirect from='/' to='/services' />
+        <Route exact path="/">
+          <Redirect to="/services"/>
+        </Route>
+
     </div>
     </Router>
   </React.StrictMode>,
