@@ -28,13 +28,14 @@ function AddService() {
 		}
 	});
 
-    const SubmitFunction = (name,adress,type) => {
-        if(name != null && adress!=null && type !=null){
-			fetch("https://localhost:44398/insertservice?id="+MaxId+"&name="+name+"&adress="+adress+"&type="+type);
+    const SubmitFunction = (f_name,f_adress,f_type) => {
+        if(f_name != null && f_adress!=null && f_type !=null){
+			fetch("https://localhost:44398/insertservice?id="+MaxId+"&name="+f_name+"&adress="+f_adress+"&type="+f_type);
 			window.alert("Service successfully added!");
 		}
-		else
+		else{
 			window.alert("Error: please fill all the fields");
+		}
     }
 
     const [name, setName] = useState(null);

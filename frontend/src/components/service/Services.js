@@ -128,21 +128,22 @@ function Services() {
 	const [userName, setUserName] = useState(null);
     const [text, setText] = useState(null);
 	
-	const SubmitFunction = (note,username,text) => {
-        if(note != null && username!=null && text !=null){
+	const SubmitFunction = (f_note,f_username,f_text) => {
+        if(f_note != null && f_username!=null && f_text !=null){
 			userData.forEach(user => {
-				if(user.username === username)
+				if(user.username === f_username)
 					userId = user.userId;
 			});
 			if (userId === -1){
-				fetch("https://localhost:44398/insertuser?id="+MaxUserId+"&name="+username);
+				fetch("https://localhost:44398/insertuser?id="+MaxUserId+"&name="+f_username);
 				userId = MaxUserId;
 			}
-			setTimeout(() => fetch("https://localhost:44398/insertreview?id="+MaxId+"&userid="+userId+"&serviceid="+serviceData[0].serviceId+"&note="+note+"&texte="+text+"&date="+today), 1000);
+			setTimeout(() => fetch("https://localhost:44398/insertreview?id="+MaxId+"&userid="+userId+"&serviceid="+serviceData[0].serviceId+"&note="+f_note+"&texte="+f_text+"&date="+today), 1000);
 			window.alert("Review successfully added!");
 		}
-		else
-		window.alert("Error: please fill all the fields");
+		else{
+			window.alert("Error: please fill all the fields");
+		}
     }
 
 	function AddReview (){
