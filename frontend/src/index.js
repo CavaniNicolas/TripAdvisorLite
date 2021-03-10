@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './css/index.css';
 
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect} from "react-router-dom";
 
 import reportWebVitals from './reportWebVitals';
 
@@ -20,6 +20,8 @@ ReactDOM.render(
         <Route path="/services" component={ServicesPage} />
         <Route path="/reviews" component={ReviewsPage} />
         <Route path="/addservice" component={AddServicePage} />
+
+        <Redirect from='/' to='/services' />
     </div>
     </Router>
   </React.StrictMode>,
