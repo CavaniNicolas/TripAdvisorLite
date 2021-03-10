@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './User.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function User({id,name}) {
 

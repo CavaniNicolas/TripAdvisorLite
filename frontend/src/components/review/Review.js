@@ -1,6 +1,6 @@
 import './Review.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState, useEffect } from 'react';
 
 

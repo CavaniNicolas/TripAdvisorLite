@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './Service.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Service({id,name,adress,type}) {
     var review_link =  "/reviews?serviceid="+id;
