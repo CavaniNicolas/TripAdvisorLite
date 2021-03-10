@@ -11,7 +11,7 @@ function Header() {
 
             <div className="logoBox">
                 <div className="logoWrap">
-                    <h1 className="logo" onClick={() => window.location.href="/services"}>Trip Advisor</h1>
+                    <h1 className="logo" onClick={() => window.location.href="/services"}>Trip Advizor</h1>
                 </div>
             </div>
 
