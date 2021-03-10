@@ -28,14 +28,16 @@ function Service({id,name,adress,type}) {
     }
 
     return (
-        <div className="service">
-            <div className="col-1">{id}</div>
-            <div className="col-3" onClick={() => window.location.href=service_link}><Link>{name}</Link></div>
-            <div className="col-3">{adress}</div>
-            <div className="col-2">{type}</div>
-            <div className="col-1">{MoyReviews(reviewData)}⠀<Link to={review_link}>({reviewData.length}reviews)</Link></div>
 
-        </div>
+      <tbody>
+        <tr>
+          <th scope="row" className="col-1">{id}</th>
+          <td className="col-3"><Link to={service_link}>{name}</Link></td>
+          <td className="col-3">{adress}</td>
+          <td className="col-2">{type}</td>
+          <td className="col-1">{MoyReviews(reviewData)}⠀<Link to={review_link}>({reviewData.length}reviews)</Link></td>
+        </tr>
+      </tbody>
 
     );
 }
