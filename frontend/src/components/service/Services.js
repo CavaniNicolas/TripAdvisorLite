@@ -139,7 +139,10 @@ function Services() {
 				userId = MaxUserId;
 			}
 			setTimeout(() => fetch("https://localhost:44398/insertreview?id="+MaxId+"&userid="+userId+"&serviceid="+serviceData[0].serviceId+"&note="+note+"&texte="+text+"&date="+today), 1000);
-        }
+			window.alert("Review successfully added!");
+		}
+		else
+		window.alert("Error: please fill all the fields");
     }
 
 	function AddReview (){

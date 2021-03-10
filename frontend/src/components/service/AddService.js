@@ -30,8 +30,11 @@ function AddService() {
 
     const SubmitFunction = (name,adress,type) => {
         if(name != null && adress!=null && type !=null){
-            fetch("https://localhost:44398/insertservice?id="+MaxId+"&name="+name+"&adress="+adress+"&type="+type);
-        }
+			fetch("https://localhost:44398/insertservice?id="+MaxId+"&name="+name+"&adress="+adress+"&type="+type);
+			window.alert("Service successfully added!");
+		}
+		else
+			window.alert("Error: please fill all the fields");
     }
 
     const [name, setName] = useState(null);
