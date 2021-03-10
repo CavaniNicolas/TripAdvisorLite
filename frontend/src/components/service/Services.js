@@ -203,22 +203,7 @@ function Services() {
 					</datalist>
 				</div>
 
-/////
-			<table class="table table-striped table-hover">
-				<thead>
-					<tr>
-					<th className="col-1" scope="col" onClick={() => ClickSort('id') }>serviceid{Arrow('id')}</th>
-					<th className="col-2" scope="col" onClick={() => ClickSort('name') }>name{Arrow('name')}</th>
-					<th className="col-3" scope="col" onClick={() => ClickSort('adress') }>adress{Arrow('adress')}</th>
-					<th className="col-2" scope="col" onClick={() => ClickSort('type') }>type{Arrow('type')}</th>
-					<th className="col-1" scope="col" onClick={() => ClickSort('note') }>note{Arrow('note')}</th>
-					</tr>
-				</thead>
-				{ServiceList}
-			</table>
 
-        </div>
-////
 				<div className="type-select">
 				<label for="exampleDataList" className="form-label">Select a service type</label>
 					<select className="selectpicker" aria-label=".form-select-lg example" onChange={e => SelectFunction(e.target.value)}>
@@ -226,20 +211,28 @@ function Services() {
 					</select>
 				</div>
 
-				<div className="col-1" onClick={() => ClickSort('id') }>serviceid{Arrow('id')}</div>
-				<div className="col-3" onClick={() => ClickSort('name') }>name{Arrow('name')}</div>
-				<div className="col-3" onClick={() => ClickSort('adress') }>adress{Arrow('adress')}</div>
-				<div className="col-2" onClick={() => ClickSort('type') }>type{Arrow('type')}</div>
-				<div className="col-1" onClick={() => ClickSort('note') }>note{Arrow('note')}</div>
+				<table class="table table-striped table-hover">
+					<thead>
+						<tr>
+						<th className="col-1" scope="col" onClick={() => ClickSort('id') }>serviceid{Arrow('id')}</th>
+						<th className="col-3" scope="col" onClick={() => ClickSort('name') }>name{Arrow('name')}</th>
+						<th className="col-3" scope="col" onClick={() => ClickSort('adress') }>adress{Arrow('adress')}</th>
+						<th className="col-2" scope="col" onClick={() => ClickSort('type') }>type{Arrow('type')}</th>
+						<th className="col-1" scope="col" onClick={() => ClickSort('note') }>note{Arrow('note')}</th>
+						</tr>
+					</thead>
 
-				<h1> </h1>
-				{ServiceList}
+					{ServiceList}
+				</table>
+
 			</div>
+			
 			<div>
 				{AddReview()}
 			</div>
+
 		</div>
-/////
+
 	);
 }
 export default Services;
