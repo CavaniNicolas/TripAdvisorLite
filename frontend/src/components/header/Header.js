@@ -9,9 +9,9 @@ function Header() {
     return (
         <header className="app-header">
 
-            <div className="logoBox">
+            <div className="logoBox" onClick={() => window.location.href="/services"}>
                 <div className="logoWrap">
-                    <h1 className="logo" onClick={() => window.location.href="/services"}>Trip Advizor</h1>
+                    <h1 className="logo">Trip Advizor</h1>
                 </div>
             </div>
 
